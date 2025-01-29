@@ -78,6 +78,16 @@ return function(p)
     deprecated = p.tulip,
   }
 
+  ---@class FleurThemeFS
+  result.fs = {
+    dir = p.gray5,
+    file = p.lily,
+    exec = p.stem,
+    link = p.dahlia,
+    binary_data = p.gray6,
+    socket = p.gray6,
+  }
+
   ---@class FleurThemeDiff
   result.diff = {
     add = p.stem,
