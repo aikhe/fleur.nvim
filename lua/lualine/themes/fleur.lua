@@ -1,4 +1,4 @@
-local p = require("fleur.palette.dark")
+local p = require "fleur.palette.dark"
 
 local lualine_theme = {
   normal = {
