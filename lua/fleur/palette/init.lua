@@ -102,12 +102,12 @@ return function(p)
   result.plugin_telescope = {
     fg_normal = p.gray8,
     bg_normal = p.black,
-    fg_results = p.gray5,
+    fg_results = p.gray6,
     bg_selection = p.gray3,
     fg_preview = p.black,
     bg_preview = p.gray9,
     fg_counter = p.gray7,
-    fg_border = p.gray7,
+    fg_border = p.gray4,
   }
 
   ---@class FleurThemeSyntax

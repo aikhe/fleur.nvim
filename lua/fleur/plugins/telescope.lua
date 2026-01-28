@@ -9,20 +9,38 @@ return function(theme)
     highlight = {
       spec.co("TelescopeNormal", telescope.fg_normal, telescope.bg_normal),
       spec.co("TelescopeBorder", telescope.fg_border, telescope.bg_normal),
+      spec.ln("TelescopePromptBorder", "TelescopeBorder"),
+      spec.ln("TelescopeResultsBorder", "TelescopeBorder"),
+      spec.ln("TelescopePreviewBorder", "TelescopeBorder"),
 
       spec.op("TelescopeMatching", { italic = true }),
-      spec.co("TelescopeSelection", telescope.fg_normal, telescope.bg_selection),
-      spec.co("TelescopePreviewLine", telescope.fg_preview, telescope.bg_preview),
+      spec.co(
+        "TelescopeSelection",
+        telescope.fg_normal,
+        telescope.bg_selection
+      ),
+      spec.co(
+        "TelescopePreviewLine",
+        telescope.fg_preview,
+        telescope.bg_preview
+      ),
       spec.ln("TelescopePreviewMatch", "TelescopePreviewLine"),
 
-      spec.fg("TelescopeTitle", telescope.fg_normal),
+      spec.fg("TelescopeTitle", telescope.fg_border),
+      spec.ln("TelescopePromptTitle", "TelescopeTitle"),
+      spec.ln("TelescopeResultsTitle", "TelescopeTitle"),
+      spec.ln("TelescopePreviewTitle", "TelescopeTitle"),
       spec.ln("TelescopeMultiSelection", "TelescopeTitle"),
       spec.ln("TelescopeMultiIcon", "TelescopeTitle"),
 
       spec.ln("TelescopePromptPrefix", "TelescopeTitle"),
       spec.fg("TelescopePromptCounter", telescope.fg_counter),
 
-      spec.co("TelescopeResultsNormal", telescope.fg_results, telescope.bg_normal),
+      spec.co(
+        "TelescopeResultsNormal",
+        telescope.fg_results,
+        telescope.bg_normal
+      ),
       spec.ln("TelescopeResultsSpecialComment", "TelescopeResultsNormal"),
       spec.ln("TelescopeResultsDiffUntracked", "TelescopeResultsNormal"),
       spec.ln("TelescopeResultsIdentifier", "TelescopeResultsNormal"),
