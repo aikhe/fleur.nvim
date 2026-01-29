@@ -6,6 +6,7 @@
 ---@field diagnostic table
 ---@field fs table
 ---@field diff table
+---@field plugin_telescope table
 ---@field syntax_default table
 ---@field syntax_lisianthus table
 ---@field syntax_tweak table
@@ -95,6 +96,18 @@ return function(p)
     change = p.tulip,
     delete = p.rose,
     info = p.dahlia,
+  }
+
+  ---@class FleurThemePluginTelescope
+  result.plugin_telescope = {
+    fg_normal = p.gray8,
+    bg_normal = p.black,
+    fg_results = p.gray5,
+    bg_selection = p.gray3,
+    fg_preview = p.black,
+    bg_preview = p.gray9,
+    fg_counter = p.gray7,
+    fg_border = p.gray7,
   }
 
   ---@class FleurThemeSyntax

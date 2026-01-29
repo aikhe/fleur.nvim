@@ -2,7 +2,7 @@ local M = {}
 
 ---@class FleurConfig
 M.defaults = {
-  mode = "dark", -- "dark" | "light"
+  mode = "dark",
   transparent = false,
   terminal_colors = true,
   styles = {

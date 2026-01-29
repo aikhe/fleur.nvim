@@ -70,7 +70,7 @@ local base = function(theme, _)
     spec.co("PmenuSel", theme.ui.fg_search, theme.ui.bg_search_cur),
 
     -- other ui
-    spec.fg("WinSeparator", theme.ui.fg_border),
+    spec.fg("WinSeparator", theme.ui.fg_whitespace),
     spec.fg("EndOfBuffer", theme.ui.fg_end_of_buffer),
     spec.fg("QuickFixLine", theme.p.stem),
   }
