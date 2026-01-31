@@ -7,12 +7,12 @@ local lualine_theme = {
     c = { bg = p.gray3, fg = p.gray7 },
   },
   insert = {
-    a = { bg = p.stem, fg = p.black, gui = "bold" },
+    a = { bg = p.dahlia, fg = p.black, gui = "bold" },
     b = { bg = p.gray3, fg = p.gray7 },
     c = { bg = p.gray3, fg = p.gray7 },
   },
   command = {
-    a = { bg = p.tulip, fg = p.black, gui = "bold" },
+    a = { bg = p.hydrangea, fg = p.black, gui = "bold" },
     b = { bg = p.gray3, fg = p.gray7 },
     c = { bg = p.gray3, fg = p.gray7 },
   },
@@ -22,7 +22,7 @@ local lualine_theme = {
     c = { bg = p.gray3, fg = p.gray7 },
   },
   replace = {
-    a = { bg = p.rose, fg = p.black, gui = "bold" },
+    a = { bg = p.lily, fg = p.black, gui = "bold" },
     b = { bg = p.gray3, fg = p.gray7 },
     c = { bg = p.gray3, fg = p.gray7 },
   },

@@ -1,12 +1,8 @@
 local spec = require "fleur.highlight.spec"
 
----@param p FleurPalette
----@param _ FleurConfig
 ---@param theme FleurTheme
 ---@return FleurHighlightSpec[]
-local treesitter = function(p, _, theme)
-  local s = theme.syntax
-
+local treesitter = function(_, _, theme)
   return {
     -- treesitter syntax
     spec.fg("@keyword", theme.syntax_default.keyword),
@@ -49,8 +45,6 @@ local treesitter = function(p, _, theme)
     spec.fg("@string.regexp", theme.syntax_default.string_escape),
 
     -- treesitter comment
-    -- QUESTION: not sure if (todo, note, warn should actual bye c.syntax.comment)
-    -- if it ends up highlighting the whole line I thing i would prefer .comment
     spec.fg("@comment", theme.syntax_default.comment),
     spec.fg("@comment.todo", theme.diagnostic.hint),
     spec.fg("@comment.note", theme.diagnostic.hint),
