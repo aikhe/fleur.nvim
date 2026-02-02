@@ -17,6 +17,7 @@ return function(p)
 
   result.ui = {
     use_undercurl = true,
+    fg_icon = p.gray4,
     fg_normal = p.gray8,
     bg_normal = p.black,
     fg_title = p.lily,

@@ -17,6 +17,7 @@ M.get = function(p, config, theme)
   vim.list_extend(core, require "fleur.highlight.syntax"(p, config, theme))
   vim.list_extend(core, require "fleur.highlight.treesitter"(p, config, theme))
   vim.list_extend(core, require "fleur.highlight.diagnostic"(theme))
+  vim.list_extend(core, require "fleur.highlight.miscs"(p, config, theme))
 
   return {
     {
