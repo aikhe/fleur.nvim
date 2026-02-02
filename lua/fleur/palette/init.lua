@@ -15,6 +15,7 @@ return function(p)
   local result = { p = p }
   result.none = "none"
 
+  ---@class FleurThemeUI
   result.ui = {
     use_undercurl = true,
     fg_icon = p.gray4,

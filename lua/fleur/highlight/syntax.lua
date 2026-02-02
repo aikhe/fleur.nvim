@@ -2,7 +2,7 @@ local spec = require "fleur.highlight.spec"
 
 ---@param theme FleurTheme
 ---@return FleurHighlightSpec[]
-local syntax = function(theme)
+local syntax = function(_, _, theme)
   return {
     -- syntax
     spec.fg("Identifier", theme.syntax_default.type),
