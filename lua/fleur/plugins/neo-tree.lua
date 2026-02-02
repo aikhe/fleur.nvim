@@ -18,7 +18,7 @@ return function(theme)
       spec.fg("NeoTreeRootName", p.gray9, { italic = true }),
       spec.fg("NeoTreeFileName", p.gray9),
       spec.fg("NeoTreeFileIcon", p.lily),
-      spec.fg("NeoTreeFileNameOpened", p.fg, { italic = true }),
+      spec.fg("NeoTreeFileNameOpened", p.gray8, { italic = true }),
       spec.fg("NeoTreeIndentMarker", p.gray4),
       spec.fg("NeoTreeGitAdded", theme.diff.add),
       spec.fg("NeoTreeGitConflict", theme.diff.delete),

@@ -13,7 +13,7 @@ M.get = function(p, config, theme)
   local core = {}
 
   vim.list_extend(core, require "fleur.highlight.lsp"(p))
-  vim.list_extend(core, require "fleur.highlight.base"(p, config))
+  vim.list_extend(core, require "fleur.highlight.base"(theme, config))
   vim.list_extend(core, require "fleur.highlight.syntax"(p, config, theme))
   vim.list_extend(core, require "fleur.highlight.treesitter"(p, config, theme))
 

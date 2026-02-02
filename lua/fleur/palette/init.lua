@@ -1,6 +1,8 @@
 ---@class FleurTheme
 ---@field p FleurPalette
----@field syntax table
+---@field none string
+---@field ui table
+---@field log table
 ---@field syntax_default table
 ---@field diff table
 ---@field syntax_lisianthus table
@@ -11,6 +13,55 @@
 return function(p)
   local result = { p = p }
   result.none = "none"
+
+  result.ui = {
+    fg_normal = p.gray8,
+    bg_normal = p.black,
+    fg_title = p.lily,
+    fg_whitespace = p.gray3,
+
+    fg_line_num = p.gray4,
+    fg_line_num_cur = p.gray7,
+    bg_cursorline = p.gray2,
+    bg_colorcolumn = p.gray1,
+
+    fg_search = p.black,
+    bg_search_item = p.dahlia,
+    bg_search_cur = p.gray8,
+
+    fg_visual = p.black,
+    bg_visual = p.gray8,
+
+    fg_statusline = p.gray7,
+    bg_statusline = p.gray3,
+    fg_statusline_nc = p.gray4,
+    bg_statusline_nc = p.gray1,
+
+    fg_tab_nc = p.gray4,
+    bg_tab_nc = p.gray2,
+    fg_tab_active = p.gray1,
+    bg_tab_active = p.gray8,
+
+    fg_border = p.gray4,
+    bg_popup = p.gray2,
+
+    fg_menu = p.gray6,
+    bg_menu = p.gray2,
+
+    bg_scrollbar = p.gray3,
+    fg_scrollbar = p.gray5,
+
+    fg_end_of_buffer = p.black,
+  }
+
+  ---@class FleurThemeLog
+  result.log = {
+    error = p.rose,
+    info = p.lily,
+    warn = p.tulip,
+    success = p.stem,
+    hint = p.gray6,
+  }
 
   result.syntax_default = {
     keyword = p.gray5,
@@ -28,6 +79,8 @@ return function(p)
     var_member = p.gray8,
     property = p.gray7,
     punctuation = p.gray6,
+    const = p.gray7,
+    special = p.dahlia,
   }
 
   ---@class FleurThemeDiff

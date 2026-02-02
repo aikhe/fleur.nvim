@@ -15,14 +15,6 @@
 ---@field gray7 string
 ---@field gray8 string
 ---@field gray9 string
----@field bg string
----@field fg string
----@field accent string
----@field keyword string
----@field string string
----@field comment string
----@field line string
----@field border string
 
 return {
   rose = "#fa8383",

@@ -8,32 +8,39 @@ local syntax = function(p, config, theme)
   local s = theme.syntax
 
   return {
-    spec.fg("Comment", s.comment, config.styles.comments),
-    spec.fg("Keyword", s.keyword, config.styles.keywords),
-    spec.fg("Function", s.func_def, config.styles.functions),
-    spec.fg("String", s.string, config.styles.strings),
-    spec.fg("Identifier", s.var),
-    spec.fg("Type", s.type),
-    spec.fg("Constant", s.var),
-    spec.fg("Number", s.punctuation),
-    spec.fg("Boolean", s.var_member),
-    spec.fg("Float", s.punctuation),
-    spec.fg("Operator", p.gray5),
-    spec.fg("Delimiter", p.lily),
-    spec.fg("Statement", s.keyword),
-    spec.fg("Conditional", s.keyword),
-    spec.fg("Repeat", s.keyword),
-    spec.fg("Label", s.keyword_return),
-    spec.fg("Exception", s.keyword_exception),
-    spec.fg("PreProc", s.builtin),
-    spec.fg("Include", s.builtin),
-    spec.fg("Define", s.builtin),
-    spec.fg("Macro", s.builtin),
-    spec.fg("Special", s.string_escape),
-    spec.fg("SpecialChar", s.string_escape),
-    spec.fg("Tag", p.rose),
-    spec.fg("Todo", p.hydrangea, { bold = true }),
-    spec.fg("Error", p.rose),
+    -- SYNTAX
+    spec.fg("Identifier", theme.syntax.type),
+    spec.fg("Function", theme.syntax.func_call),
+    spec.fg("Type", theme.syntax.type),
+    spec.fg("Variable", theme.syntax.var),
+    spec.fg("Statement", theme.syntax.keyword),
+    spec.fg("Special", theme.syntax.special),
+    spec.fg("Keyword", theme.syntax.keyword),
+    spec.ln("Conditional", "Keyword"),
+    spec.ln("Repeat", "Keyword"),
+    spec.ln("Label", "Keyword"),
+    spec.ln("Exception", "Keyword"),
+    spec.ln("PreProc", "Keyword"),
+
+    -- CONSTANTS
+    spec.fg("Constant", theme.syntax.const),
+    spec.fg("String", theme.syntax.string),
+    spec.ln("Character", "String"),
+    spec.ln("Number", "Constant"),
+    spec.ln("Boolean", "Constant"),
+    spec.ln("Float", "Constant"),
+
+    -- PUNCTUATION
+    spec.fg("Quote", theme.syntax.string),
+    spec.fg("Operator", theme.syntax.punctuation),
+    spec.fg("Delimiter", theme.syntax.punctuation),
+    spec.co("MatchParen", theme.ui.bg_search_cur, theme.ui.bg_search_item),
+
+    -- COMMENT
+    spec.fg("Todo", theme.log.hint),
+    spec.fg("Question", theme.log.hint),
+    spec.fg("Comment", theme.syntax.comment),
+    spec.fg("SpecialComment", theme.syntax.comment),
   }
 end
 
