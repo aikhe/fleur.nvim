@@ -51,6 +51,7 @@ M.load = function(opts)
   local theme = create_theme(palette_base)
   load_variant(opts, theme)
   local p = change.apply(palette_base, config)
+  theme.p = p
 
   -- clear existing highlights
   if vim.g.colors_name then vim.cmd "hi clear" end
@@ -58,12 +59,17 @@ M.load = function(opts)
   vim.g.colors_name = "fleur"
   vim.o.background = mode
 
-  -- get core hl groups
-  local groups = highlights.get(p, config, theme)
+  -- get hl groups
+  local highlight_groups = highlights.get(p, config, theme)
+  local groups = {}
 
-  -- add plugin hl
-  if config.plugins.telescope then
-    vim.list_extend(groups, require "fleur.plugins.telescope"(p))
+  for _, group in ipairs(highlight_groups) do
+    if
+      group.dont_skip
+      or (group.plugin_name and config.plugins[group.plugin_name])
+    then
+      vim.list_extend(groups, group.highlight)
+    end
   end
 
   -- user modify hl

@@ -15,6 +15,8 @@ M.defaults = {
     telescope = true,
     cmp = true,
     lsp = true,
+    git_signs = true,
+    neo_tree = true,
   },
   on_colors = function(_) end,
   on_highlights = function(_, _) end,
