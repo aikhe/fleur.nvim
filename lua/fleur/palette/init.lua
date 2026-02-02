@@ -15,6 +15,7 @@ return function(p)
   result.none = "none"
 
   result.ui = {
+    use_undercurl = true,
     fg_normal = p.gray8,
     bg_normal = p.black,
     fg_title = p.lily,
@@ -61,6 +62,17 @@ return function(p)
     warn = p.tulip,
     success = p.stem,
     hint = p.gray6,
+  }
+
+  ---@class FleurThemeDiagnostic
+  result.diagnostic = {
+    text = p.gray4,
+    ok = p.stem,
+    hint = p.gray6,
+    error = p.rose,
+    info = p.dahlia,
+    warn = p.tulip,
+    deprecated = p.tulip,
   }
 
   ---@class FleurThemeDiff
