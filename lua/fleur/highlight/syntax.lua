@@ -1,35 +1,40 @@
-local spec = require("fleur.highlight.spec")
+local spec = require "fleur.highlight.spec"
 
 ---@param p FleurPalette
 ---@param config FleurConfig
+---@param theme FleurTheme
 ---@return FleurHighlightSpec[]
-return function(p, config)
+local syntax = function(p, config, theme)
+  local s = theme.syntax
+
   return {
-    spec.fg("Comment", p.comment, config.styles.comments),
-    spec.fg("Keyword", p.keyword, config.styles.keywords),
-    spec.fg("Function", p.hydrangea, config.styles.functions),
-    spec.fg("String", p.string, config.styles.strings),
-    spec.fg("Identifier", p.fg),
-    spec.fg("Type", p.tulip),                                  -- sunflower -> tulip
-    spec.fg("Constant", p.tulip),                              -- sunflower -> tulip
-    spec.fg("Number", p.tulip),                                -- sunflower -> tulip
-    spec.fg("Boolean", p.tulip),                               -- sunflower -> tulip
-    spec.fg("Float", p.tulip),                                 -- sunflower -> tulip
-    spec.fg("Operator", p.lily),
+    spec.fg("Comment", s.comment, config.styles.comments),
+    spec.fg("Keyword", s.keyword, config.styles.keywords),
+    spec.fg("Function", s.func_def, config.styles.functions),
+    spec.fg("String", s.string, config.styles.strings),
+    spec.fg("Identifier", s.var),
+    spec.fg("Type", s.type),
+    spec.fg("Constant", s.var),
+    spec.fg("Number", s.punctuation),
+    spec.fg("Boolean", s.var_member),
+    spec.fg("Float", s.punctuation),
+    spec.fg("Operator", p.gray5),
     spec.fg("Delimiter", p.lily),
-    spec.fg("Statement", p.lavender),
-    spec.fg("Conditional", p.lavender),
-    spec.fg("Repeat", p.lavender),
-    spec.fg("Label", p.rose),
-    spec.fg("Exception", p.rose),
-    spec.fg("PreProc", p.lavender),
-    spec.fg("Include", p.lavender),
-    spec.fg("Define", p.lavender),
-    spec.fg("Macro", p.lavender),
-    spec.fg("Special", p.rose),
-    spec.fg("SpecialChar", p.rose),
+    spec.fg("Statement", s.keyword),
+    spec.fg("Conditional", s.keyword),
+    spec.fg("Repeat", s.keyword),
+    spec.fg("Label", s.keyword_return),
+    spec.fg("Exception", s.keyword_exception),
+    spec.fg("PreProc", s.builtin),
+    spec.fg("Include", s.builtin),
+    spec.fg("Define", s.builtin),
+    spec.fg("Macro", s.builtin),
+    spec.fg("Special", s.string_escape),
+    spec.fg("SpecialChar", s.string_escape),
     spec.fg("Tag", p.rose),
-    spec.fg("Todo", p.accent, { bold = true }),
+    spec.fg("Todo", p.hydrangea, { bold = true }),
     spec.fg("Error", p.rose),
   }
 end
+
+return syntax

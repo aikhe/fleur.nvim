@@ -2,8 +2,11 @@ local spec = require "fleur.highlight.spec"
 
 ---@param p FleurPalette
 ---@param _ FleurConfig
+---@param theme FleurTheme
 ---@return FleurHighlightSpec[]
-return function(p, _)
+local treesitter = function(p, _, theme)
+  local s = theme.syntax
+
   return {
     -- links to standard syntax groups
     spec.ln("@keyword", "Keyword"),
@@ -18,19 +21,26 @@ return function(p, _)
     spec.ln("@boolean", "Boolean"),
     spec.ln("@operator", "Operator"),
 
-    -- treesitter-specific groups
-    spec.fg("@variable.parameter", p.tulip), -- sunflower -> tulip
-    spec.fg("@variable.member", p.lily),
-    spec.fg("@property", p.lily),
-    spec.fg("@field", p.lily),
-    spec.fg("@punctuation.bracket", p.gray4),
-    spec.fg("@punctuation.delimiter", p.lily),
-    spec.fg("@punctuation.special", p.rose),
-    spec.fg("@constructor", p.hydrangea),
+    -- treesitter-specific groups using theme.syntax
+    spec.fg("@keyword.return", s.keyword_return),
+    spec.fg("@keyword.exception", s.keyword_exception),
+    spec.fg("@variable.parameter", s.var_member),
+    spec.fg("@variable.member", s.keyword_exception),
+    spec.fg("@property", s.property),
+    spec.fg("@field", s.var_member),
+    spec.fg("@punctuation.bracket", s.punctuation),
+    spec.fg("@punctuation.delimiter", s.punctuation),
+    spec.fg("@punctuation.special", s.string_escape),
+    spec.fg("@constructor", s.type),
+    spec.fg("@string.escape", s.string_escape),
+    spec.fg("@function.builtin", s.builtin),
+    spec.fg("@type.builtin", s.type_primitive),
     spec.fg("@tag", p.rose),
-    spec.fg("@tag.attribute", p.tulip), -- sunflower -> tulip
+    spec.fg("@tag.attribute", p.tulip),
     spec.fg("@tag.delimiter", p.gray4),
-    spec.fg("@namespace", p.lavender),
-    spec.fg("@module", p.lavender),
+    spec.fg("@namespace", s.builtin),
+    spec.fg("@module", s.builtin),
   }
 end
+
+return treesitter
