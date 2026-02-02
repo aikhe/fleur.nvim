@@ -7,7 +7,7 @@ return function(theme)
   return {
     plugin_name = "neo_tree",
     highlight = {
-      spec.bg("NeoTreeCursorLine", p.gray4),
+      spec.bg("NeoTreeCursorLine", p.gray2),
       spec.co("NeoTreeFloatBorder", p.gray4, p.black),
       -- spec.bg("NeoTreeFloatNormal", p.gray1),
       -- spec.bg("NeoTreeNormal", p.gray1),
@@ -15,7 +15,7 @@ return function(theme)
       -- spec.bg("NeoTreeTabSeperatorInactive", p.gray1),
       spec.fg("NeoTreeDirectoryIcon", p.gray5),
       spec.fg("NeoTreeDirectoryName", p.gray5),
-      spec.fg("NeoTreeRootName", p.gray9, { bold = true }),
+      spec.fg("NeoTreeRootName", p.gray9, { italic = true }),
       spec.fg("NeoTreeFileName", p.gray9),
       spec.fg("NeoTreeFileIcon", p.lily),
       spec.fg("NeoTreeFileNameOpened", p.fg, { italic = true }),

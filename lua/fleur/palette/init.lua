@@ -1,4 +1,5 @@
 ---@class FleurTheme
+---@field p FleurPalette
 ---@field syntax table
 ---@field syntax_default table
 ---@field diff table
@@ -29,7 +30,7 @@ return function(p)
     punctuation = p.gray6,
   }
 
-  ---@class LacklusterThemeDiff
+  ---@class FleurThemeDiff
   result.diff = {
     add = p.stem,
     change = p.tulip,
