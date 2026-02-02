@@ -6,19 +6,19 @@ local lsp = function(p)
   return {
     -- diagnostics
     spec.fg("DiagnosticError", p.rose),
-    spec.fg("DiagnosticWarn", p.gray5), -- sunflower -> tulip
+    spec.fg("DiagnosticWarn", p.gray5),
     spec.fg("DiagnosticInfo", p.hydrangea),
     spec.fg("DiagnosticHint", p.dahlia),
 
     -- underlines
     spec.op("DiagnosticUnderlineError", { undercurl = true, sp = p.rose }),
-    spec.op("DiagnosticUnderlineWarn", { undercurl = true, sp = p.tulip }), -- sunflower -> tulip
+    spec.op("DiagnosticUnderlineWarn", { undercurl = true, sp = p.tulip }),
     spec.op("DiagnosticUnderlineInfo", { undercurl = true, sp = p.hydrangea }),
     spec.op("DiagnosticUnderlineHint", { undercurl = true, sp = p.dahlia }),
 
     -- virtual text
     spec.fg("DiagnosticVirtualTextError", p.rose),
-    spec.fg("DiagnosticVirtualTextWarn", p.gray5), -- sunflower -> tulip
+    spec.fg("DiagnosticVirtualTextWarn", p.gray5),
     spec.fg("DiagnosticVirtualTextInfo", p.hydrangea),
     spec.fg("DiagnosticVirtualTextHint", p.dahlia),
 

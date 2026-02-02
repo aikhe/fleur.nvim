@@ -4,6 +4,7 @@
 ---@field ui table
 ---@field log table
 ---@field diagnostic table
+---@field fs table
 ---@field diff table
 ---@field syntax_default table
 ---@field syntax_lisianthus table
