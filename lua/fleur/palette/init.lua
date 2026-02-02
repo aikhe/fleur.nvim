@@ -63,6 +63,15 @@ return function(p)
     hint = p.gray6,
   }
 
+  ---@class FleurThemeDiff
+  result.diff = {
+    add = p.stem,
+    change = p.tulip,
+    delete = p.rose,
+    info = p.dahlia,
+  }
+
+  ---@class FleurThemeSyntax
   result.syntax_default = {
     keyword = p.gray5,
     keyword_return = p.stem,
@@ -83,14 +92,7 @@ return function(p)
     special = p.dahlia,
   }
 
-  ---@class FleurThemeDiff
-  result.diff = {
-    add = p.stem,
-    change = p.tulip,
-    delete = p.rose,
-    info = p.dahlia,
-  }
-
+  ---@class FleurThemeSyntax
   result.syntax_lisianthus =
     vim.tbl_deep_extend("force", result.syntax_default, {
       keyword_return = p.stem,

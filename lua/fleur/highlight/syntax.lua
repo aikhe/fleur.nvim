@@ -1,14 +1,10 @@
 local spec = require "fleur.highlight.spec"
 
----@param p FleurPalette
----@param config FleurConfig
 ---@param theme FleurTheme
 ---@return FleurHighlightSpec[]
-local syntax = function(p, config, theme)
-  local s = theme.syntax
-
+local syntax = function(theme)
   return {
-    -- SYNTAX
+    -- syntax
     spec.fg("Identifier", theme.syntax_default.type),
     spec.fg("Function", theme.syntax_default.func_call),
     spec.fg("Type", theme.syntax_default.type),
@@ -22,7 +18,7 @@ local syntax = function(p, config, theme)
     spec.ln("Exception", "Keyword"),
     spec.ln("PreProc", "Keyword"),
 
-    -- CONSTANTS
+    -- constants
     spec.fg("Constant", theme.syntax_default.const),
     spec.fg("String", theme.syntax_default.string),
     spec.ln("Character", "String"),
@@ -30,13 +26,13 @@ local syntax = function(p, config, theme)
     spec.ln("Boolean", "Constant"),
     spec.ln("Float", "Constant"),
 
-    -- PUNCTUATION
+    -- punctuation
     spec.fg("Quote", theme.syntax_default.string),
     spec.fg("Operator", theme.syntax_default.punctuation),
     spec.fg("Delimiter", theme.syntax_default.punctuation),
     spec.co("MatchParen", theme.ui.bg_search_cur, theme.ui.bg_search_item),
 
-    -- COMMENT
+    -- comment
     spec.fg("Todo", theme.log.hint),
     spec.fg("Question", theme.log.hint),
     spec.fg("Comment", theme.syntax_default.comment),
