@@ -1,11 +1,10 @@
 local spec = require "fleur.highlight.spec"
-local u = require "fleur.utils"
 
 ---@param theme FleurTheme
 ---@return FleurHighlightSpec[]
 local diagnostic = function(theme)
   return {
-    -- DIAGNOSTICS
+    -- diagnostics
     spec.fg("DiagnosticOk", theme.diagnostic.text),
     spec.fg("DiagnosticHint", theme.diagnostic.text),
     spec.fg("DiagnosticInfo", theme.diagnostic.text),

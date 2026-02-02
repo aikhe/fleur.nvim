@@ -3,8 +3,9 @@
 ---@field none string
 ---@field ui table
 ---@field log table
----@field syntax_default table
+---@field diagnostic table
 ---@field diff table
+---@field syntax_default table
 ---@field syntax_lisianthus table
 ---@field syntax_tweak table
 
@@ -102,6 +103,10 @@ return function(p)
     punctuation = p.gray6,
     const = p.gray7,
     special = p.dahlia,
+    type_def = p.gray8,
+    const_builtin = p.gray6,
+    tag = p.gray5,
+    func_param = p.gray8,
   }
 
   ---@class FleurThemeSyntax
