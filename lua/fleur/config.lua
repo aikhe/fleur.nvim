@@ -17,6 +17,7 @@ M.defaults = {
     lsp = true,
     git_signs = true,
     neo_tree = true,
+    which_key = true,
   },
   on_colors = function(_) end,
   on_highlights = function(_, _) end,

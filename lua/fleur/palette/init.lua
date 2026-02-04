@@ -7,6 +7,7 @@
 ---@field fs table
 ---@field diff table
 ---@field plugin_telescope table
+---@field plugin_which_key table
 ---@field syntax_default table
 ---@field syntax_lisianthus table
 ---@field syntax_tweak table
@@ -110,13 +111,22 @@ return function(p)
     fg_border = p.gray4,
   }
 
+  ---@class FleurThemePluginWhichKey
+  result.plugin_which_key = {
+    bg = p.gray1,
+    key = p.lily,
+    group = p.gray5,
+    separator = p.gray6,
+    desc = p.gray7,
+  }
+
   ---@class FleurThemeSyntax
   result.syntax_default = {
     keyword = p.gray5,
     keyword_return = p.stem,
     keyword_exception = p.rose,
     string = p.dahlia,
-    string_escape = p.tulip,
+    string_escape = p.hydrangea,
     comment = p.gray4,
     type = p.gray6,
     type_primitive = p.gray6,
@@ -141,6 +151,10 @@ return function(p)
       keyword_return = p.stem,
       keyword_exception = p.hydrangea,
     })
+
+  -- result.syntaX_lulumi =
+  --   vim.tbl_deep_extend("force", result.syntax_default, {
+  --   })
 
   result.syntax_tweak = {}
 

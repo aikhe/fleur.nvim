@@ -34,6 +34,8 @@ local load_variant = function(opt, theme)
   -- special
   if opt.theme == "lisianthus" then theme.syntax = theme.syntax_lisianthus end
 
+  if opt.theme == "lulumi" then theme.syntax = theme.syntax_lulumi end
+
   theme.syntax = vim.tbl_extend("force", theme.syntax, theme.syntax_tweak)
 end
 

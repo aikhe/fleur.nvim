@@ -28,6 +28,7 @@ M.get = function(p, config, theme)
     require "fleur.plugins.git-signs"(theme),
     require "fleur.plugins.neo-tree"(theme),
     require "fleur.plugins.oil"(theme),
+    require "fleur.plugins.which-key"(theme),
   }
 end
 
