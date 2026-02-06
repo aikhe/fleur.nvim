@@ -94,30 +94,9 @@ return function(p)
   ---@class FleurThemeDiff
   result.diff = {
     add = p.stem,
-    change = p.tulip,
+    change = p.gray8,
     delete = p.rose,
     info = p.dahlia,
-  }
-
-  ---@class FleurThemePluginTelescope
-  result.plugin_telescope = {
-    fg_normal = p.gray8,
-    bg_normal = p.black,
-    fg_results = p.gray6,
-    bg_selection = p.gray3,
-    fg_preview = p.black,
-    bg_preview = p.gray9,
-    fg_counter = p.gray7,
-    fg_border = p.gray4,
-  }
-
-  ---@class FleurThemePluginWhichKey
-  result.plugin_which_key = {
-    bg = p.gray1,
-    key = p.lily,
-    group = p.gray5,
-    separator = p.gray6,
-    desc = p.gray7,
   }
 
   ---@class FleurThemeSyntax
@@ -132,7 +111,7 @@ return function(p)
     type_primitive = p.gray6,
     builtin = p.dahlia,
     func_def = p.lily,
-    func_call = p.gray1,
+    func_call = p.gray6,
     var = p.gray9,
     var_member = p.gray8,
     property = p.gray7,
@@ -155,6 +134,27 @@ return function(p)
   -- result.syntaX_lulumi =
   --   vim.tbl_deep_extend("force", result.syntax_default, {
   --   })
+
+  ---@class FleurThemePluginTelescope
+  result.plugin_telescope = {
+    fg_normal = p.gray8,
+    bg_normal = p.black,
+    fg_results = p.gray6,
+    bg_selection = p.gray3,
+    fg_preview = p.black,
+    bg_preview = p.gray9,
+    fg_counter = p.gray7,
+    fg_border = p.gray4,
+  }
+
+  ---@class FleurThemePluginWhichKey
+  result.plugin_which_key = {
+    bg = p.gray1,
+    key = p.lily,
+    group = p.gray5,
+    separator = p.gray6,
+    desc = p.gray7,
+  }
 
   result.syntax_tweak = {}
 

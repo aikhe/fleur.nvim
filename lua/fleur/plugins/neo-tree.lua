@@ -8,6 +8,7 @@ return function(theme)
     plugin_name = "neo_tree",
     highlight = {
       spec.bg("NeoTreeCursorLine", p.gray2),
+      spec.fg("NeoTreeFloatTitle", p.gray5),
       spec.co("NeoTreeFloatBorder", p.gray4, p.black),
       -- spec.bg("NeoTreeFloatNormal", p.gray1),
       -- spec.bg("NeoTreeNormal", p.gray1),

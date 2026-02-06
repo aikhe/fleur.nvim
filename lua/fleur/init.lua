@@ -10,6 +10,15 @@ local M = {}
 ---@param opts? FleurConfig
 M.setup = function(opts)
   require("fleur.config").setup(opts)
+
+  -- Reload the colorscheme when the background changes
+  vim.api.nvim_create_autocmd("OptionSet", {
+    pattern = "background",
+    callback = function()
+      if vim.g.colors_name == "fleur" then vim.cmd "colorscheme fleur" end
+    end,
+  })
+
   vim.api.nvim_create_user_command(
     "FleurReload",
     function() require("fleur.utils").reload() end,
@@ -48,15 +57,16 @@ M.load = function(opts)
   end
 
   -- apply theme & variant
-  local mode = opts.mode or config.mode
+  -- prioritize opts.mode, then vim.o.background, then fallback to config.mode
+  local mode = opts.mode or vim.o.background
   local palette_base = mode == "light" and light_color or dark_color
   local theme = create_theme(palette_base)
   load_variant(opts, theme)
   local p = change.apply(palette_base, config)
   theme.p = p
 
-  -- clear existing highlights
-  if vim.g.colors_name then vim.cmd "hi clear" end
+  -- clear highlights
+  vim.cmd "hi clear"
   vim.o.termguicolors = true
   vim.g.colors_name = "fleur"
   vim.o.background = mode
