@@ -1,47 +1,38 @@
-local spec = require "fleur.highlight.spec"
+local hl = require "fleur.highlight.hl"
 
 ---@param theme FleurTheme
----@return FleurHighlightSpec[]
+---@return FleurHighlight[]
 local diagnostic = function(theme)
   return {
-    -- diagnostics
-    spec.fg("DiagnosticOk", theme.diagnostic.text),
-    spec.fg("DiagnosticHint", theme.diagnostic.text),
-    spec.fg("DiagnosticInfo", theme.diagnostic.text),
-    spec.fg("DiagnosticWarn", theme.diagnostic.text),
-    spec.fg("DiagnosticError", theme.diagnostic.error),
-    spec.fg("DiagnosticDeprecated", theme.diagnostic.text),
-    spec.fg("DiagnosticUnnecessary", theme.diagnostic.text),
+    hl.fg("DiagnosticVirtualTextOk", theme.diagnostic.ok),
+    hl.fg("DiagnosticVirtualTextHint", theme.diagnostic.hint),
+    hl.fg("DiagnosticVirtualTextInfo", theme.diagnostic.info),
+    hl.fg("DiagnosticVirtualTextWarn", theme.diagnostic.warn),
+    hl.fg("DiagnosticVirtualTextError", theme.diagnostic.error),
 
-    spec.fg("DiagnosticVirtualTextOk", theme.diagnostic.text),
-    spec.fg("DiagnosticVirtualTextHint", theme.diagnostic.text),
-    spec.fg("DiagnosticVirtualTextInfo", theme.diagnostic.text),
-    spec.fg("DiagnosticVirtualTextWarn", theme.diagnostic.text),
-    spec.fg("DiagnosticVirtualTextError", theme.diagnostic.error),
+    hl.fg("DiagnosticSignOk", theme.diagnostic.ok),
+    hl.fg("DiagnosticSignInfo", theme.diagnostic.info),
+    hl.fg("DiagnosticSignHint", theme.diagnostic.hint),
+    hl.fg("DiagnosticSignWarn", theme.diagnostic.warn),
+    hl.fg("DiagnosticSignError", theme.diagnostic.error),
+    hl.fg("DiagnosticSignDeprecated", theme.diagnostic.deprecated),
 
-    spec.fg("DiagnosticSignOk", theme.diagnostic.ok),
-    spec.fg("DiagnosticSignInfo", theme.diagnostic.info),
-    spec.fg("DiagnosticSignHint", theme.diagnostic.hint),
-    spec.fg("DiagnosticSignWarn", theme.diagnostic.warn),
-    spec.fg("DiagnosticSignError", theme.diagnostic.error),
-    spec.fg("DiagnosticSignDeprecated", theme.diagnostic.deprecated),
-
-    spec.op("DiagnosticUnderlineWarn", {
+    hl.op("DiagnosticUnderlineWarn", {
       undercurl = theme.ui.use_undercurl,
       underline = not theme.ui.use_undercurl,
       sp = theme.diagnostic.warn,
     }),
-    spec.op("DiagnosticUnderlineInfo", {
+    hl.op("DiagnosticUnderlineInfo", {
       undercurl = theme.ui.use_undercurl,
       underline = not theme.ui.use_undercurl,
       sp = theme.diagnostic.info,
     }),
-    spec.op("DiagnosticUnderlineHint", {
+    hl.op("DiagnosticUnderlineHint", {
       undercurl = theme.ui.use_undercurl,
       underline = not theme.ui.use_undercurl,
       sp = theme.diagnostic.hint,
     }),
-    spec.op("DiagnosticUnderlineError", {
+    hl.op("DiagnosticUnderlineError", {
       undercurl = theme.ui.use_undercurl,
       underline = not theme.ui.use_undercurl,
       sp = theme.diagnostic.error,

@@ -1,27 +1,30 @@
-local spec = require "fleur.highlight.spec"
+local hl = require "fleur.highlight.hl"
 
 ---@param theme FleurTheme
----@return FleurHighlightSpec[]
+---@return FleurHighlight[]
 local oil = function(theme)
   return {
     plugin_name = "neo_tree",
     highlight = {
-      spec.fg("Directory", theme.fs.dir),
-      spec.fg("OilFile", theme.fs.file),
-      spec.fg("OilDir", theme.fs.dir),
-      spec.fg("OilDirIcon", theme.fs.dir),
-      spec.fg("OilLink", theme.fs.link),
-      spec.ln("OilLinkTarget", "OilLink"),
-      spec.fg("OilSocket", theme.fs.socket),
-      spec.fg("OilCreate", theme.diff.add),
-      spec.fg("OilCopy", theme.diff.add),
-      spec.fg("OilRestore", theme.diff.add),
-      spec.fg("OilDelete", theme.diff.delete),
-      spec.fg("OilPurge", theme.diff.delete),
-      spec.fg("OilTrash", theme.diff.delete),
-      spec.fg("OilTrashSourcePath", theme.diff.delete),
-      spec.fg("OilMove", theme.diff.change),
-      spec.fg("OilChange", theme.diff.change),
+      hl.fg("Directory", theme.fs.dir),
+      hl.fg("OilFile", theme.fs.file),
+      hl.fg("OilDir", theme.fs.dir),
+      hl.fg("OilDirIcon", theme.fs.dir),
+      hl.fg("OilLink", theme.fs.link),
+      hl.ln("OilLinkTarget", "OilLink"),
+      hl.fg("OilSocket", theme.fs.socket),
+      hl.fg("OilCreate", theme.diff.add),
+      hl.fg("OilCopy", theme.diff.add),
+      hl.fg("OilRestore", theme.diff.add),
+      hl.fg("OilDelete", theme.diff.delete),
+      hl.fg("OilPurge", theme.diff.delete),
+      hl.fg("OilTrash", theme.diff.delete),
+      hl.fg("OilTrashSourcePath", theme.diff.delete),
+      hl.fg("OilMove", theme.diff.change),
+      hl.fg("OilChange", theme.diff.change),
+
+      hl.co("WinBar", theme.ui.fg_line_num_cur, theme.ui.bg_normal),
+      hl.co("WinBarNC", theme.ui.fg_line_num_cur, theme.ui.bg_normal),
     },
   }
 end

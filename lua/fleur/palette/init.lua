@@ -8,8 +8,9 @@
 ---@field diff table
 ---@field plugin_telescope table
 ---@field plugin_which_key table
----@field syntax_default table
----@field syntax_lisianthus table
+---@field syntax FleurThemeSyntax
+---@field syntax_default FleurThemeSyntax
+---@field syntax_lisianthus FleurThemeSyntax
 ---@field syntax_tweak table
 
 ---@param p FleurPalette
@@ -28,13 +29,13 @@ return function(p)
     fg_whitespace = p.gray3,
 
     fg_line_num = p.gray4,
-    fg_line_num_cur = p.gray7,
+    fg_line_num_cur = p.gray6,
     bg_cursorline = p.gray2,
     bg_colorcolumn = p.gray1,
 
     fg_search = p.black,
-    bg_search_item = p.dahlia,
-    bg_search_cur = p.gray8,
+    bg_search_item = p.gray3,
+    bg_search_cur = p.dahlia,
 
     fg_visual = p.black,
     bg_visual = p.gray8,
@@ -58,7 +59,7 @@ return function(p)
     bg_scrollbar = p.gray3,
     fg_scrollbar = p.gray5,
 
-    fg_end_of_buffer = p.black,
+    fg_end_of_buffer = p.gray4,
   }
 
   ---@class FleurThemeLog
@@ -83,8 +84,8 @@ return function(p)
 
   ---@class FleurThemeFS
   result.fs = {
-    dir = p.gray5,
-    file = p.lily,
+    dir = p.gray6,
+    file = p.gray8,
     exec = p.stem,
     link = p.dahlia,
     binary_data = p.gray6,
@@ -94,7 +95,7 @@ return function(p)
   ---@class FleurThemeDiff
   result.diff = {
     add = p.stem,
-    change = p.gray8,
+    change = p.gray4,
     delete = p.rose,
     info = p.dahlia,
   }
@@ -131,9 +132,11 @@ return function(p)
       keyword_exception = p.hydrangea,
     })
 
-  -- result.syntaX_lulumi =
-  --   vim.tbl_deep_extend("force", result.syntax_default, {
-  --   })
+  ---@class FleurThemeSyntax
+  result.syntaX_lulumi = vim.tbl_deep_extend("force", result.syntax_default, {
+    keyword_return = p.stem,
+    keyword_exception = p.hydrangea,
+  })
 
   ---@class FleurThemePluginTelescope
   result.plugin_telescope = {

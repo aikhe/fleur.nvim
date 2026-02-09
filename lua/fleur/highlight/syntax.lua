@@ -1,42 +1,35 @@
-local spec = require "fleur.highlight.spec"
+local hl = require "fleur.highlight.hl"
 
 ---@param theme FleurTheme
----@return FleurHighlightSpec[]
+---@return FleurHighlight[]
 local syntax = function(_, _, theme)
   return {
     -- syntax
-    spec.fg("Identifier", theme.syntax_default.type),
-    spec.fg("Function", theme.syntax_default.func_call),
-    spec.fg("Type", theme.syntax_default.type),
-    spec.fg("Variable", theme.syntax_default.var),
-    spec.fg("Statement", theme.syntax_default.keyword),
-    spec.fg("Special", theme.syntax_default.special),
-    spec.fg("Keyword", theme.syntax_default.keyword),
-    spec.ln("Conditional", "Keyword"),
-    spec.ln("Repeat", "Keyword"),
-    spec.ln("Label", "Keyword"),
-    spec.ln("Exception", "Keyword"),
-    spec.ln("PreProc", "Keyword"),
+    hl.ln("Conditional", "Keyword"),
+    hl.ln("Repeat", "Keyword"),
+    hl.ln("Label", "Keyword"),
+    hl.ln("Exception", "Keyword"),
+    hl.ln("PreProc", "Keyword"),
 
     -- constants
-    spec.fg("Constant", theme.syntax_default.const),
-    spec.fg("String", theme.syntax_default.string),
-    spec.ln("Character", "String"),
-    spec.ln("Number", "Constant"),
-    spec.ln("Boolean", "Constant"),
-    spec.ln("Float", "Constant"),
+    hl.fg("Constant", theme.syntax_default.const),
+    hl.fg("String", theme.syntax_default.string),
+    hl.ln("Character", "String"),
+    hl.ln("Number", "Constant"),
+    hl.ln("Boolean", "Constant"),
+    hl.ln("Float", "Constant"),
 
     -- punctuation
-    spec.fg("Quote", theme.syntax_default.string),
-    spec.fg("Operator", theme.syntax_default.punctuation),
-    spec.fg("Delimiter", theme.syntax_default.punctuation),
-    spec.co("MatchParen", theme.ui.bg_search_cur, theme.ui.bg_search_item),
+    hl.fg("Quote", theme.syntax_default.string),
+    hl.fg("Operator", theme.syntax_default.punctuation),
+    hl.fg("Delimiter", theme.syntax_default.punctuation),
+    hl.co("MatchParen", theme.ui.bg_search_cur, theme.ui.bg_search_item),
 
     -- comment
-    spec.fg("Todo", theme.log.hint),
-    spec.fg("Question", theme.log.hint),
-    spec.fg("Comment", theme.syntax_default.comment),
-    spec.fg("SpecialComment", theme.syntax_default.comment),
+    hl.fg("Todo", theme.log.hint),
+    hl.fg("Question", theme.log.hint),
+    hl.fg("Comment", theme.syntax_default.comment),
+    hl.fg("SpecialComment", theme.syntax_default.comment),
   }
 end
 

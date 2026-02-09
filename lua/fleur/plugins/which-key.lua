@@ -1,4 +1,4 @@
-local spec = require "fleur.highlight.spec"
+local hl = require "fleur.highlight.hl"
 
 ---@param theme FleurTheme
 ---@return FleurHighlightGroup
@@ -7,10 +7,10 @@ local which_key = function(theme)
   return {
     plugin_name = "which_key",
     highlight = {
-      spec.co("WhichKey", wk.key, wk.bg),
-      spec.fg("WhichKeyGroup", wk.group),
-      spec.fg("WhichKeyDesc", wk.desc),
-      spec.fg("WhichKeySeparator", wk.separator),
+      hl.co("WhichKey", wk.key, wk.bg),
+      hl.fg("WhichKeyGroup", wk.group),
+      hl.fg("WhichKeyDesc", wk.desc),
+      hl.fg("WhichKeySeparator", wk.separator),
     },
   }
 end

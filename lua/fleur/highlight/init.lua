@@ -3,7 +3,7 @@ local M = {}
 ---@class FleurHighlightGroup
 ---@field plugin_name? string
 ---@field dont_skip? boolean
----@field highlight FleurHighlightSpec[]
+---@field highlight FleurHighlight[]
 
 ---@param p FleurPalette
 ---@param config FleurConfig

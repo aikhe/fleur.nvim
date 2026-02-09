@@ -1,78 +1,74 @@
-local spec = require "fleur.highlight.spec"
+local hl = require "fleur.highlight.hl"
 
 ---@param theme FleurTheme
----@return FleurHighlightSpec[]
-local base = function(theme, _)
+---@return FleurHighlight[]
+local base = function(theme)
   return {
     -- text
-    spec.co("Normal", theme.ui.fg_normal, theme.ui.bg_normal),
-    spec.fg("Title", theme.ui.fg_title),
-    spec.fg("Whitespace", theme.ui.fg_whitespace),
+    hl.co("Normal", theme.ui.fg_normal, theme.ui.bg_normal),
+    hl.fg("Title", theme.ui.fg_title),
+    hl.fg("Whitespace", theme.ui.fg_whitespace),
 
     -- non text
-    spec.fg("NonText", theme.p.gray5),
+    hl.fg("NonText", theme.p.gray5),
 
     -- cursor
-    spec.co("SignColumn", theme.ui.fg_line_num, theme.ui.bg_normal),
-    spec.co("CursorLine", theme.none, theme.ui.bg_cursorline),
-    spec.fg("CursorLineNr", theme.ui.fg_line_num_cur),
-    spec.fg("LineNr", theme.ui.fg_line_num),
-    spec.bg("ColorColumn", theme.ui.bg_colorcolumn),
+    hl.co("SignColumn", theme.ui.fg_line_num, theme.ui.bg_normal),
+    hl.co("CursorLine", theme.none, theme.ui.bg_cursorline),
+    hl.fg("CursorLineNr", theme.ui.fg_line_num_cur, { bold = true }),
+    hl.fg("LineNr", theme.ui.fg_line_num),
+    hl.bg("ColorColumn", theme.ui.bg_colorcolumn),
 
     -- search
-    spec.co("Search", theme.ui.fg_search, theme.ui.bg_search_item),
-    spec.co("CurSearch", theme.ui.fg_search, theme.ui.bg_search_cur),
-    spec.ln("IncSearch", "CurSearch"),
-    spec.ln("Substitute", "Search"),
+    hl.bg("Search", theme.ui.bg_search_item),
+    hl.co("CurSearch", theme.ui.fg_search, theme.ui.bg_search_cur),
+    hl.ln("IncSearch", "CurSearch"),
+    hl.ln("Substitute", "Search"),
 
     -- visual
-    spec.co("VISUAL", theme.ui.fg_visual, theme.ui.bg_visual),
-    spec.ln("VISUALNOS", "VISUAL"),
+    hl.co("VISUAL", theme.ui.fg_visual, theme.ui.bg_visual),
+    hl.ln("VISUALNOS", "VISUAL"),
 
     -- fold
-    spec.fg("Folded", theme.p.gray4),
-    spec.fg("FoldColumn", theme.p.gray4),
+    hl.fg("Folded", theme.p.gray4),
+    hl.fg("FoldColumn", theme.p.gray4),
 
     -- message
-    spec.fg("Error", theme.log.error),
-    spec.fg("ModeMsg", theme.log.info),
-    spec.fg("MoreMsg", theme.log.info),
-    spec.fg("MsgArea", theme.log.info),
-    spec.ln("ErrorMsg", "Error"),
-    spec.fg("WarningMsg", theme.log.warn),
-    spec.fg("NvimInternalError", theme.log.error),
-    spec.fg("healthError", theme.log.error),
-    spec.fg("healthSuccess", theme.log.success),
-    spec.fg("healthWarning", theme.log.warn),
+    hl.fg("Error", theme.log.error),
+    hl.fg("ModeMsg", theme.log.info),
+    hl.fg("MoreMsg", theme.log.info),
+    hl.fg("MsgArea", theme.log.info),
+    hl.ln("ErrorMsg", "Error"),
+    hl.fg("WarningMsg", theme.log.warn),
+    hl.fg("NvimInternalError", theme.log.error),
+    hl.fg("healthError", theme.log.error),
+    hl.fg("healthSuccess", theme.log.success),
+    hl.fg("healthWarning", theme.log.warn),
 
     -- statusLine
-    spec.co("StatusLine", theme.ui.fg_statusline, theme.ui.bg_statusline),
-    spec.co(
-      "StatusLineNC",
-      theme.ui.fg_statusline_nc,
-      theme.ui.bg_statusline_nc
-    ),
+    hl.co("StatusLine", theme.ui.fg_statusline, theme.ui.bg_statusline),
+    hl.co("StatusLineNC", theme.ui.fg_statusline_nc, theme.ui.bg_statusline_nc),
 
     -- tabline
-    spec.co("Tabline", theme.ui.fg_tab_nc, theme.ui.bg_tab_nc),
-    spec.co("TablineSel", theme.ui.fg_tab_active, theme.ui.bg_tab_active),
-    spec.co("TablineFill", theme.ui.fg_statusline, theme.ui.bg_statusline),
+    hl.co("Tabline", theme.ui.fg_tab_nc, theme.ui.bg_tab_nc),
+    hl.co("TablineSel", theme.ui.fg_tab_active, theme.ui.bg_tab_active),
+    hl.co("TablineFill", theme.ui.fg_statusline, theme.ui.bg_statusline),
 
     -- float
-    spec.co("NormalFloat", theme.ui.fg_normal, theme.ui.bg_popup),
-    spec.co("FloatBorder", theme.ui.fg_border, theme.ui.bg_popup),
-    spec.fg("FloatTitle", theme.ui.fg_title),
+    hl.co("NormalFloat", theme.ui.fg_normal, theme.ui.bg_popup),
+    hl.co("FloatBorder", theme.ui.fg_border, theme.ui.bg_popup),
+    hl.fg("FloatTitle", theme.ui.fg_title),
 
     -- menu
-    spec.co("Pmenu", theme.ui.fg_menu, theme.ui.bg_menu),
-    spec.co("PmenuSbar", theme.ui.bg_scrollbar, theme.ui.bg_scrollbar),
-    spec.co("PmenuThumb", theme.ui.fg_scrollbar, theme.ui.fg_scrollbar),
-    spec.co("PmenuSel", theme.ui.fg_search, theme.ui.bg_search_cur),
+    hl.co("Pmenu", theme.ui.fg_menu, theme.ui.bg_menu),
+    hl.co("PmenuSbar", theme.ui.bg_scrollbar, theme.ui.bg_scrollbar),
+    hl.co("PmenuThumb", theme.ui.fg_scrollbar, theme.ui.fg_scrollbar),
+    hl.co("PmenuSel", theme.ui.fg_search, theme.ui.bg_search_cur),
 
     -- other ui
-    spec.fg("WinSeparator", theme.ui.fg_whitespace),
-    spec.fg("EndOfBuffer", theme.ui.fg_end_of_buffer),
-    spec.fg("QuickFixLine", theme.p.stem),
+    hl.fg("WinSeparator", theme.ui.bg_cursorline),
+    hl.fg("EndOfBuffer", theme.ui.fg_end_of_buffer),
+    hl.fg("QuickFixLine", theme.p.stem),
   }
 end
 

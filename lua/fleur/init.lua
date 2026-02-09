@@ -11,7 +11,6 @@ local M = {}
 M.setup = function(opts)
   require("fleur.config").setup(opts)
 
-  -- Reload the colorscheme when the background changes
   vim.api.nvim_create_autocmd("OptionSet", {
     pattern = "background",
     callback = function()
@@ -26,7 +25,7 @@ M.setup = function(opts)
   )
 end
 
----@param groups FleurHighlightSpec[]
+---@param groups FleurHighlight[]
 local apply_highlights = function(groups)
   for _, hl in ipairs(groups) do
     local name = hl.name
@@ -43,7 +42,8 @@ local load_variant = function(opt, theme)
   -- special
   if opt.theme == "lisianthus" then theme.syntax = theme.syntax_lisianthus end
 
-  if opt.theme == "lulumi" then theme.syntax = theme.syntax_lulumi end
+  -- WIP
+  -- if opt.theme == "lulumi" then theme.syntax = theme.syntax_lulumi end
 
   theme.syntax = vim.tbl_extend("force", theme.syntax, theme.syntax_tweak)
 end
@@ -57,7 +57,7 @@ M.load = function(opts)
   end
 
   -- apply theme & variant
-  -- prioritize opts.mode, then vim.o.background, then fallback to config.mode
+  -- prioritize opts.mode, then vim.o.background, then should fallback to config.mode
   local mode = opts.mode or vim.o.background
   local palette_base = mode == "light" and light_color or dark_color
   local theme = create_theme(palette_base)

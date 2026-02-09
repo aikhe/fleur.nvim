@@ -1,4 +1,4 @@
-local spec = require "fleur.highlight.spec"
+local hl = require "fleur.highlight.hl"
 
 ---@param theme FleurTheme
 ---@return FleurHighlightGroup
@@ -7,28 +7,24 @@ return function(theme)
   return {
     plugin_name = "neo_tree",
     highlight = {
-      spec.bg("NeoTreeCursorLine", p.gray2),
-      spec.fg("NeoTreeFloatTitle", p.gray5),
-      spec.co("NeoTreeFloatBorder", p.gray4, p.black),
-      -- spec.bg("NeoTreeFloatNormal", p.gray1),
-      -- spec.bg("NeoTreeNormal", p.gray1),
-      -- spec.bg("NeoTreeTabInactive", p.gray2),
-      -- spec.bg("NeoTreeTabSeperatorInactive", p.gray1),
-      spec.fg("NeoTreeDirectoryIcon", p.gray5),
-      spec.fg("NeoTreeDirectoryName", p.gray5),
-      spec.fg("NeoTreeRootName", p.gray9, { italic = true }),
-      spec.fg("NeoTreeFileName", p.gray9),
-      spec.fg("NeoTreeFileIcon", p.lily),
-      spec.fg("NeoTreeFileNameOpened", p.gray8, { italic = true }),
-      spec.fg("NeoTreeIndentMarker", p.gray4),
-      spec.fg("NeoTreeGitAdded", theme.diff.add),
-      spec.fg("NeoTreeGitConflict", theme.diff.delete),
-      spec.fg("NeoTreeGitDeleted", theme.diff.delete),
-      spec.fg("NeoTreeGitIgnored", p.gray4),
-      spec.fg("NeoTreeGitModified", p.gray6),
-      spec.fg("NeoTreeGitUnstaged", theme.diff.change),
-      spec.fg("NeoTreeGitUntracked", theme.diff.change, { italic = true }),
-      spec.fg("NeoTreeGitStaged", theme.diff.add),
+      hl.bg("NeoTreeCursorLine", p.gray2),
+      hl.co("NeoTreeFloatTitle", p.gray5, p.black),
+      hl.co("NeoTreeFloatBorder", p.gray3, p.black),
+      hl.fg("NeoTreeDirectoryIcon", p.gray5),
+      hl.fg("NeoTreeDirectoryName", p.gray6, { bold = true }),
+      hl.fg("NeoTreeRootName", p.gray9),
+      hl.fg("NeoTreeFileName", p.gray8),
+      hl.fg("NeoTreeFileIcon", p.lily),
+      hl.fg("NeoTreeFileNameOpened", p.gray8, { italic = true }),
+      hl.fg("NeoTreeIndentMarker", p.gray4),
+      hl.fg("NeoTreeGitAdded", theme.diff.add),
+      hl.fg("NeoTreeGitConflict", theme.diff.delete),
+      hl.fg("NeoTreeGitDeleted", theme.diff.delete),
+      hl.fg("NeoTreeGitIgnored", p.gray4),
+      hl.fg("NeoTreeGitModified", p.tulip, { italic = true }),
+      hl.fg("NeoTreeGitUnstaged", theme.diff.change),
+      hl.fg("NeoTreeGitUntracked", theme.diff.info, { italic = true }),
+      hl.fg("NeoTreeGitStaged", theme.diff.add),
     },
   }
 end

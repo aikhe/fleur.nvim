@@ -1,4 +1,4 @@
-local spec = require "fleur.highlight.spec"
+local hl = require "fleur.highlight.hl"
 
 ---@param theme FleurTheme
 ---@return FleurHighlightGroup
@@ -7,58 +7,50 @@ return function(theme)
   return {
     plugin_name = "telescope",
     highlight = {
-      spec.co("TelescopeNormal", telescope.fg_normal, telescope.bg_normal),
-      spec.co("TelescopeBorder", telescope.fg_border, telescope.bg_normal),
-      spec.ln("TelescopePromptBorder", "TelescopeBorder"),
-      spec.ln("TelescopeResultsBorder", "TelescopeBorder"),
-      spec.ln("TelescopePreviewBorder", "TelescopeBorder"),
+      hl.co("TelescopeNormal", telescope.fg_normal, telescope.bg_normal),
+      hl.co("TelescopeBorder", telescope.fg_border, telescope.bg_normal),
+      hl.ln("TelescopePromptBorder", "TelescopeBorder"),
+      hl.ln("TelescopeResultsBorder", "TelescopeBorder"),
+      hl.ln("TelescopePreviewBorder", "TelescopeBorder"),
 
-      spec.op("TelescopeMatching", { italic = true }),
-      spec.co(
-        "TelescopeSelection",
-        telescope.fg_normal,
-        telescope.bg_selection
-      ),
-      spec.co(
-        "TelescopePreviewLine",
-        telescope.fg_preview,
-        telescope.bg_preview
-      ),
-      spec.ln("TelescopePreviewMatch", "TelescopePreviewLine"),
+      hl.op("TelescopeMatching", { italic = true }),
+      hl.co("TelescopeSelection", telescope.fg_normal, telescope.bg_selection),
+      hl.co("TelescopePreviewLine", telescope.fg_preview, telescope.bg_preview),
+      hl.ln("TelescopePreviewMatch", "TelescopePreviewLine"),
 
-      spec.fg("TelescopeTitle", telescope.fg_border),
-      spec.ln("TelescopePromptTitle", "TelescopeTitle"),
-      spec.ln("TelescopeResultsTitle", "TelescopeTitle"),
-      spec.ln("TelescopePreviewTitle", "TelescopeTitle"),
-      spec.ln("TelescopeMultiSelection", "TelescopeTitle"),
-      spec.ln("TelescopeMultiIcon", "TelescopeTitle"),
+      hl.fg("TelescopeTitle", telescope.fg_border),
+      hl.ln("TelescopePromptTitle", "TelescopeTitle"),
+      hl.ln("TelescopeResultsTitle", "TelescopeTitle"),
+      hl.ln("TelescopePreviewTitle", "TelescopeTitle"),
+      hl.ln("TelescopeMultiSelection", "TelescopeTitle"),
+      hl.ln("TelescopeMultiIcon", "TelescopeTitle"),
 
-      spec.ln("TelescopePromptPrefix", "TelescopeTitle"),
-      spec.fg("TelescopePromptCounter", telescope.fg_counter),
+      hl.ln("TelescopePromptPrefix", "TelescopeTitle"),
+      hl.fg("TelescopePromptCounter", telescope.fg_counter),
 
-      spec.co(
+      hl.co(
         "TelescopeResultsNormal",
         telescope.fg_results,
         telescope.bg_normal
       ),
-      spec.ln("TelescopeResultsSpecialComment", "TelescopeResultsNormal"),
-      spec.ln("TelescopeResultsDiffUntracked", "TelescopeResultsNormal"),
-      spec.ln("TelescopeResultsIdentifier", "TelescopeResultsNormal"),
-      spec.ln("TelescopeResultsDiffDelete", "TelescopeResultsNormal"),
-      spec.ln("TelescopeResultsDiffChange", "TelescopeResultsNormal"),
-      spec.ln("TelescopeResultsVariable", "TelescopeResultsNormal"),
-      spec.ln("TelescopeResultsOperator", "TelescopeResultsNormal"),
-      spec.ln("TelescopeResultsFunction", "TelescopeResultsNormal"),
-      spec.ln("TelescopeResultsConstant", "TelescopeResultsNormal"),
-      spec.ln("TelescopeResultsDiffAdd", "TelescopeResultsNormal"),
-      spec.ln("TelescopeResultsComment", "TelescopeResultsNormal"),
-      spec.ln("TelescopeResultsSymbol", "TelescopeResultsNormal"),
-      spec.ln("TelescopeResultsStruct", "TelescopeResultsNormal"),
-      spec.ln("TelescopeResultsNumber", "TelescopeResultsNormal"),
-      spec.ln("TelescopeResultsMethod", "TelescopeResultsNormal"),
-      spec.ln("TelescopeResultsLineNr", "TelescopeResultsNormal"),
-      spec.ln("TelescopeResultsField", "TelescopeResultsNormal"),
-      spec.ln("TelescopeResultsClass", "TelescopeResultsNormal"),
+      hl.ln("TelescopeResultsSpecialComment", "TelescopeResultsNormal"),
+      hl.ln("TelescopeResultsDiffUntracked", "TelescopeResultsNormal"),
+      hl.ln("TelescopeResultsIdentifier", "TelescopeResultsNormal"),
+      hl.ln("TelescopeResultsDiffDelete", "TelescopeResultsNormal"),
+      hl.ln("TelescopeResultsDiffChange", "TelescopeResultsNormal"),
+      hl.ln("TelescopeResultsVariable", "TelescopeResultsNormal"),
+      hl.ln("TelescopeResultsOperator", "TelescopeResultsNormal"),
+      hl.ln("TelescopeResultsFunction", "TelescopeResultsNormal"),
+      hl.ln("TelescopeResultsConstant", "TelescopeResultsNormal"),
+      hl.ln("TelescopeResultsDiffAdd", "TelescopeResultsNormal"),
+      hl.ln("TelescopeResultsComment", "TelescopeResultsNormal"),
+      hl.ln("TelescopeResultsSymbol", "TelescopeResultsNormal"),
+      hl.ln("TelescopeResultsStruct", "TelescopeResultsNormal"),
+      hl.ln("TelescopeResultsNumber", "TelescopeResultsNormal"),
+      hl.ln("TelescopeResultsMethod", "TelescopeResultsNormal"),
+      hl.ln("TelescopeResultsLineNr", "TelescopeResultsNormal"),
+      hl.ln("TelescopeResultsField", "TelescopeResultsNormal"),
+      hl.ln("TelescopeResultsClass", "TelescopeResultsNormal"),
     },
   }
 end
