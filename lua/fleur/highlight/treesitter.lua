@@ -60,7 +60,7 @@ local treesitter = function(_, _, theme)
     hl.fg("@comment", theme.syntax_default.comment),
     hl.fg("@comment.todo", theme.diagnostic.hint),
     hl.fg("@comment.note", theme.diagnostic.hint),
-    hl.fg("@comment.warn", theme.diagnostic.warn),
+    hl.fg("@comment.warning", theme.diagnostic.warn),
     hl.fg("@comment.error", theme.diagnostic.error),
     hl.fg("@comment.documentation", theme.syntax_default.comment),
 

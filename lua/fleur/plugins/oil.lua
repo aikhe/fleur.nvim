@@ -4,7 +4,7 @@ local hl = require "fleur.highlight.hl"
 ---@return FleurHighlight[]
 local oil = function(theme)
   return {
-    plugin_name = "neo_tree",
+    plugin_name = "oil",
     highlight = {
       hl.fg("Directory", theme.fs.dir),
       hl.fg("OilFile", theme.fs.file),

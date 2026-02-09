@@ -96,6 +96,19 @@ local miscs = function(p, _, theme)
 
     -- webdevicon
     hl.fg("DevIconDefault", theme.ui.fg_icon),
+
+    -- todos
+    hl.bg("TodoBgTODO", theme.p.gray9),
+    hl.fg("TodoFgTODO", theme.p.gray9, { bold = true }),
+    hl.op("TodoSignTODO", { bold = true }),
+
+    hl.bg("TodoBgNOTE", theme.p.dahlia),
+    hl.fg("TodoFgNOTE", theme.p.dahlia, { bold = true }),
+    hl.op("TodoSignNOTE", { bold = true }),
+
+    hl.bg("TodoBgWARN", theme.p.tulip),
+    hl.fg("TodoFgWARN", theme.p.tulip, { bold = true }),
+    hl.op("TodoSignWARN", { bold = true }),
   }
 end
 

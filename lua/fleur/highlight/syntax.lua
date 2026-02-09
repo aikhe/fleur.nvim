@@ -5,6 +5,13 @@ local hl = require "fleur.highlight.hl"
 local syntax = function(_, _, theme)
   return {
     -- syntax
+    hl.fg("Identifier", theme.syntax_default.type),
+    hl.fg("Function", theme.syntax_default.func_call),
+    hl.fg("Type", theme.syntax_default.type),
+    hl.fg("Variable", theme.syntax_default.var),
+    hl.fg("Statement", theme.syntax_default.keyword),
+    hl.fg("Special", theme.syntax_default.special),
+    hl.fg("Keyword", theme.syntax_default.keyword),
     hl.ln("Conditional", "Keyword"),
     hl.ln("Repeat", "Keyword"),
     hl.ln("Label", "Keyword"),

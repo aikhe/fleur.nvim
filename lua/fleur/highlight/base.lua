@@ -63,7 +63,7 @@ local base = function(theme)
     hl.co("Pmenu", theme.ui.fg_menu, theme.ui.bg_menu),
     hl.co("PmenuSbar", theme.ui.bg_scrollbar, theme.ui.bg_scrollbar),
     hl.co("PmenuThumb", theme.ui.fg_scrollbar, theme.ui.fg_scrollbar),
-    hl.co("PmenuSel", theme.ui.fg_search, theme.ui.bg_search_cur),
+    hl.co("PmenuSel", theme.ui.fg_search, theme.ui.bg_pmenu_sel),
 
     -- other ui
     hl.fg("WinSeparator", theme.ui.bg_cursorline),

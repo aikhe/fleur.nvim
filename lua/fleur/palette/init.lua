@@ -55,11 +55,12 @@ return function(p)
 
     fg_menu = p.gray6,
     bg_menu = p.gray2,
+    bg_pmenu_sel = p.gray8,
 
     bg_scrollbar = p.gray3,
     fg_scrollbar = p.gray5,
 
-    fg_end_of_buffer = p.gray4,
+    fg_end_of_buffer = p.gray3,
   }
 
   ---@class FleurThemeLog
@@ -95,7 +96,7 @@ return function(p)
   ---@class FleurThemeDiff
   result.diff = {
     add = p.stem,
-    change = p.gray4,
+    change = p.gray6,
     delete = p.rose,
     info = p.dahlia,
   }
@@ -133,7 +134,7 @@ return function(p)
     })
 
   ---@class FleurThemeSyntax
-  result.syntaX_lulumi = vim.tbl_deep_extend("force", result.syntax_default, {
+  result.syntax_lulumi = vim.tbl_deep_extend("force", result.syntax_default, {
     keyword_return = p.stem,
     keyword_exception = p.hydrangea,
   })

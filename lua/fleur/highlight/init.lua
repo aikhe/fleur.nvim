@@ -24,10 +24,11 @@ M.get = function(p, config, theme)
       dont_skip = true,
       highlight = core,
     },
-    require "fleur.plugins.telescope"(theme),
     require "fleur.plugins.git-signs"(theme),
+    require "fleur.plugins.mini"(theme),
     require "fleur.plugins.neo-tree"(theme),
     require "fleur.plugins.oil"(theme),
+    require "fleur.plugins.telescope"(theme),
     require "fleur.plugins.which-key"(theme),
   }
 end

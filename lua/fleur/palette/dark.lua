@@ -5,6 +5,8 @@
 ---@field dahlia string
 ---@field lily string
 ---@field stem string
+---@field lulumi string
+---@field maomi string
 ---@field black string
 ---@field gray1 string
 ---@field gray2 string
