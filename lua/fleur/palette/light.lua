@@ -1,22 +1,4 @@
----@class FleurPalette
----@field rose string
----@field tulip string
----@field hydrangea string
----@field dahlia string
----@field lily string
----@field stem string
----@field lulumi string
----@field maomi string
----@field black string
----@field gray1 string
----@field gray2 string
----@field gray3 string
----@field gray4 string
----@field gray5 string
----@field gray6 string
----@field gray7 string
----@field gray8 string
----@field gray9 string
+---@type FleurPalette
 return {
   rose = "#FF8080",
   tulip = "#FFBA9D",

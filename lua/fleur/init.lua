@@ -1,8 +1,4 @@
 local config = require("fleur.config").options
-local dark_color = require "fleur.palette.dark"
-local light_color = require "fleur.palette.light"
-local create_theme = require "fleur.palette"
-local change = require "fleur.change"
 local highlights = require "fleur.highlight"
 
 local M = {}
@@ -38,13 +34,8 @@ end
 ---@param theme FleurTheme
 local load_variant = function(opt, theme)
   theme.syntax = theme.syntax_default
-
-  -- special
   if opt.theme == "lisianthus" then theme.syntax = theme.syntax_lisianthus end
-
-  -- WIP
-  -- if opt.theme == "lulumi" then theme.syntax = theme.syntax_lulumi end
-
+  if opt.theme == "lulumi" then theme.syntax = theme.syntax_lulumi end
   theme.syntax = vim.tbl_extend("force", theme.syntax, theme.syntax_tweak)
 end
 
@@ -52,27 +43,30 @@ M.load = function(opts)
   opts = opts or {}
 
   if vim.tbl_isempty(config) then
-    M.setup {}
+    M.setup()
     config = require("fleur.config").options
   end
 
-  -- apply theme & variant
-  -- prioritize opts.mode, then vim.o.background, then should fallback to config.mode
   local mode = opts.mode or vim.o.background
-  local palette_base = mode == "light" and light_color or dark_color
-  local theme = create_theme(palette_base)
+  local palette = require("fleur.palette." .. mode)
+  local theme = require "fleur.palette"(palette)
   load_variant(opts, theme)
-  local p = change.apply(palette_base, config)
+
+  -- apply transparency + user color overrides
+  local p = vim.tbl_deep_extend("force", {}, palette)
+  if config.transparent then
+    p.bg = "NONE"
+    p.line = "NONE"
+  end
+  config.on_colors(p)
   theme.p = p
 
-  -- clear highlights
   vim.cmd "hi clear"
   vim.o.termguicolors = true
   vim.g.colors_name = "fleur"
   vim.o.background = mode
 
-  -- get hl groups
-  local highlight_groups = highlights.get(p, config, theme)
+  local highlight_groups = highlights.get(config, theme)
   local groups = {}
 
   for _, group in ipairs(highlight_groups) do
@@ -84,14 +78,12 @@ M.load = function(opts)
     end
   end
 
-  -- user modify hl
   local hl_map = {}
   for _, hl in ipairs(groups) do
     hl_map[hl.name] = hl
   end
   config.on_highlights(hl_map, p)
 
-  -- apply hl
   apply_highlights(groups)
 end
 

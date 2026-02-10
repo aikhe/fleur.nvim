@@ -3,22 +3,23 @@ local hl = require "fleur.highlight.hl"
 ---@param theme FleurTheme
 ---@return FleurHighlightGroup
 return function(theme)
-  local telescope = theme.plugin_telescope
+  local p = theme.p
+  local ui = theme.ui
   return {
     plugin_name = "telescope",
     highlight = {
-      hl.co("TelescopeNormal", telescope.fg_normal, telescope.bg_normal),
-      hl.co("TelescopeBorder", telescope.fg_border, telescope.bg_normal),
+      hl.co("TelescopeNormal", ui.fg_normal, ui.bg_normal),
+      hl.co("TelescopeBorder", ui.fg_border, ui.bg_normal),
       hl.ln("TelescopePromptBorder", "TelescopeBorder"),
       hl.ln("TelescopeResultsBorder", "TelescopeBorder"),
       hl.ln("TelescopePreviewBorder", "TelescopeBorder"),
 
       hl.op("TelescopeMatching", { italic = true }),
-      hl.co("TelescopeSelection", telescope.fg_normal, telescope.bg_selection),
-      hl.co("TelescopePreviewLine", telescope.fg_preview, telescope.bg_preview),
+      hl.co("TelescopeSelection", ui.fg_normal, p.gray3),
+      hl.co("TelescopePreviewLine", p.black, p.gray9),
       hl.ln("TelescopePreviewMatch", "TelescopePreviewLine"),
 
-      hl.fg("TelescopeTitle", telescope.fg_border),
+      hl.fg("TelescopeTitle", ui.fg_border),
       hl.ln("TelescopePromptTitle", "TelescopeTitle"),
       hl.ln("TelescopeResultsTitle", "TelescopeTitle"),
       hl.ln("TelescopePreviewTitle", "TelescopeTitle"),
@@ -26,13 +27,9 @@ return function(theme)
       hl.ln("TelescopeMultiIcon", "TelescopeTitle"),
 
       hl.ln("TelescopePromptPrefix", "TelescopeTitle"),
-      hl.fg("TelescopePromptCounter", telescope.fg_counter),
+      hl.fg("TelescopePromptCounter", p.gray7),
 
-      hl.co(
-        "TelescopeResultsNormal",
-        telescope.fg_results,
-        telescope.bg_normal
-      ),
+      hl.co("TelescopeResultsNormal", p.gray6, ui.bg_normal),
       hl.ln("TelescopeResultsSpecialComment", "TelescopeResultsNormal"),
       hl.ln("TelescopeResultsDiffUntracked", "TelescopeResultsNormal"),
       hl.ln("TelescopeResultsIdentifier", "TelescopeResultsNormal"),

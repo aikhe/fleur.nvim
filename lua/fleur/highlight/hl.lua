@@ -1,6 +1,3 @@
----@class FleurHighlight : vim.api.keyset.highlight
----@field name string
-
 local M = {}
 
 ---@param name string

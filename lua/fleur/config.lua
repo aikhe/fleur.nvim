@@ -1,6 +1,5 @@
 local M = {}
 
----@class FleurConfig
 M.defaults = {
   mode = "dark",
   transparent = false,
@@ -24,7 +23,7 @@ M.defaults = {
 }
 
 ---@type FleurConfig
-M.options = {}
+M.options = vim.deepcopy(M.defaults)
 
 ---@param opts? FleurConfig
 function M.setup(opts)

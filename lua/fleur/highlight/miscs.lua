@@ -1,12 +1,10 @@
 local hl = require "fleur.highlight.hl"
 
----@param p FleurPalette
----@param _ FleurConfig
 ---@param theme FleurTheme
 ---@return FleurHighlight[]
-local miscs = function(p, _, theme)
+local miscs = function(theme)
+  local p = theme.p
   return {
-    -- spell
     hl.op("SpellBad", {
       undercurl = theme.ui.use_undercurl,
       underline = not theme.ui.use_undercurl,
@@ -15,7 +13,6 @@ local miscs = function(p, _, theme)
     hl.ln("SpellCap", "SpellBad"),
     hl.ln("SpellRare", "SpellBad"),
 
-    -- diff
     hl.fg("Added", theme.diff.add),
     hl.fg("Changed", theme.diff.change),
     hl.fg("Removed", theme.diff.delete),
@@ -33,29 +30,24 @@ local miscs = function(p, _, theme)
     hl.fg("DiffIndexLine", theme.diff.info),
 
     -- lisp
-    hl.fg("@string.special.symbol.clojure", theme.syntax_default.type), -- :symbols
+    hl.fg("@string.special.symbol.clojure", theme.syntax_default.type),
     hl.ln("lispFunc", "@variable.parameter"),
     hl.ln("lispSymbol", "@variable"),
     hl.ln("lispDecl", "@keyword"),
 
-    -- zsh
     hl.fg("zshFunction", theme.syntax_default.func_def),
 
-    -- json,yaml,toml
     hl.fg("@property.json", p.gray6),
     hl.fg("@property.yaml", p.gray6),
     hl.fg("@property.toml", p.gray6),
     hl.fg("@type.toml", p.gray8),
 
-    -- xml
     hl.fg("xmlTag", p.gray5),
     hl.fg("xmlTagName", p.gray5),
     hl.fg("xmlAttrib", p.gray4),
 
-    -- html
     hl.fg("htmlTagName", theme.syntax_default.tag),
 
-    -- text
     hl.fg("texStatement", p.gray5),
     hl.fg("texDefCmd", p.gray5),
     hl.fg("texDefName", p.gray5),
@@ -64,7 +56,6 @@ local miscs = function(p, _, theme)
     hl.fg("texDocAbstract", p.gray5),
     hl.fg("texBeginEnd", p.gray5),
 
-    -- css
     hl.fg("cssMediaProp", theme.ui.fg_normal),
     hl.fg("cssTransitionProp", theme.ui.fg_normal),
     hl.fg("cssTextProp", theme.ui.fg_normal),
@@ -77,27 +68,23 @@ local miscs = function(p, _, theme)
     hl.fg("@property.css", theme.ui.fg_normal),
     hl.fg("@tag.css", theme.ui.fg_normal),
 
-    -- markdown
     hl.fg("markdownCodeDelimiter", p.stem),
     hl.fg("markdownLinkDelimiter", p.gray6),
     hl.ln("markdownLinkTextDelimiter", "@markup.link"),
     hl.ln("markdownLinkText", "@markup.link"),
     hl.ln("markdownUrl", "@markup.link.url"),
 
-    -- sql
     hl.fg("sqlType", theme.syntax_default.string),
     hl.fg("sqlKeyword", theme.syntax_default.keyword),
     hl.fg("sqlStatement", theme.syntax_default.keyword),
     hl.fg("sqlVariable", theme.syntax_default.special),
 
-    -- make
     hl.fg("@string.special.symbol.make", theme.syntax_default.string),
     hl.fg("makeSpecial", theme.syntax_default.special),
 
-    -- webdevicon
     hl.fg("DevIconDefault", theme.ui.fg_icon),
 
-    -- todos
+    -- todo-comments.nvim
     hl.bg("TodoBgTODO", theme.p.gray9),
     hl.fg("TodoFgTODO", theme.p.gray9, { bold = true }),
     hl.op("TodoSignTODO", { bold = true }),

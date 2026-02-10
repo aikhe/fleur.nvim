@@ -1,0 +1,73 @@
+---@class FleurPalette
+---@field rose string
+---@field tulip string
+---@field hydrangea string
+---@field dahlia string
+---@field lily string
+---@field stem string
+---@field lulumi string
+---@field maomi string
+---@field black string
+---@field gray1 string
+---@field gray2 string
+---@field gray3 string
+---@field gray4 string
+---@field gray5 string
+---@field gray6 string
+---@field gray7 string
+---@field gray8 string
+---@field gray9 string
+
+---@class FleurConfig
+---@field mode string
+---@field transparent boolean
+---@field terminal_colors boolean
+---@field styles table<string, vim.api.keyset.highlight>
+---@field plugins table<string, boolean>
+---@field on_colors fun(palette: FleurPalette)
+---@field on_highlights fun(highlights: table, palette: FleurPalette)
+
+---@class FleurHighlight: vim.api.keyset.highlight
+---@field name string
+
+---@class FleurHighlightGroup
+---@field plugin_name? string
+---@field dont_skip? boolean
+---@field highlight FleurHighlight[]
+
+---@class FleurThemeSyntax
+---@field keyword string
+---@field keyword_return string
+---@field keyword_exception string
+---@field string string
+---@field string_escape string
+---@field comment string
+---@field type string
+---@field type_primitive string
+---@field builtin string
+---@field func_def string
+---@field func_call string
+---@field var string
+---@field var_member string
+---@field property string
+---@field punctuation string
+---@field const string
+---@field special string
+---@field type_def string
+---@field const_builtin string
+---@field tag string
+---@field func_param string
+
+---@class FleurTheme
+---@field p FleurPalette
+---@field none string
+---@field ui table
+---@field log table
+---@field diagnostic table
+---@field fs table
+---@field diff table
+---@field syntax FleurThemeSyntax
+---@field syntax_default FleurThemeSyntax
+---@field syntax_lisianthus FleurThemeSyntax
+---@field syntax_lulumi FleurThemeSyntax
+---@field syntax_tweak table

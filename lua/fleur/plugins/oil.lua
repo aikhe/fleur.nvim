@@ -1,7 +1,7 @@
 local hl = require "fleur.highlight.hl"
 
 ---@param theme FleurTheme
----@return FleurHighlight[]
+---@return FleurHighlightGroup
 local oil = function(theme)
   return {
     plugin_name = "oil",

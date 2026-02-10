@@ -1,25 +1,9 @@
----@class FleurTheme
----@field p FleurPalette
----@field none string
----@field ui table
----@field log table
----@field diagnostic table
----@field fs table
----@field diff table
----@field plugin_telescope table
----@field plugin_which_key table
----@field syntax FleurThemeSyntax
----@field syntax_default FleurThemeSyntax
----@field syntax_lisianthus FleurThemeSyntax
----@field syntax_tweak table
-
 ---@param p FleurPalette
 ---@return FleurTheme
 return function(p)
   local result = { p = p }
   result.none = "none"
 
-  ---@class FleurThemeUI
   result.ui = {
     use_undercurl = true,
     fg_icon = p.gray4,
@@ -63,7 +47,6 @@ return function(p)
     fg_end_of_buffer = p.gray3,
   }
 
-  ---@class FleurThemeLog
   result.log = {
     error = p.rose,
     info = p.lily,
@@ -72,7 +55,6 @@ return function(p)
     hint = p.gray6,
   }
 
-  ---@class FleurThemeDiagnostic
   result.diagnostic = {
     text = p.gray4,
     ok = p.stem,
@@ -83,7 +65,6 @@ return function(p)
     deprecated = p.tulip,
   }
 
-  ---@class FleurThemeFS
   result.fs = {
     dir = p.gray6,
     file = p.gray8,
@@ -93,7 +74,6 @@ return function(p)
     socket = p.gray6,
   }
 
-  ---@class FleurThemeDiff
   result.diff = {
     add = p.stem,
     change = p.gray6,
@@ -101,7 +81,6 @@ return function(p)
     info = p.dahlia,
   }
 
-  ---@class FleurThemeSyntax
   result.syntax_default = {
     keyword = p.gray5,
     keyword_return = p.stem,
@@ -114,51 +93,28 @@ return function(p)
     builtin = p.dahlia,
     func_def = p.lily,
     func_call = p.gray6,
-    var = p.gray9,
-    var_member = p.gray8,
-    property = p.gray7,
-    punctuation = p.gray6,
-    const = p.gray7,
+    var = p.gray8,
+    var_member = p.gray7,
+    property = p.gray6,
+    punctuation = p.gray5,
+    const = p.gray6,
     special = p.dahlia,
-    type_def = p.gray8,
-    const_builtin = p.gray6,
-    tag = p.gray5,
-    func_param = p.gray8,
+    type_def = p.gray7,
+    const_builtin = p.gray5,
+    tag = p.gray4,
+    func_param = p.gray7,
   }
 
-  ---@class FleurThemeSyntax
   result.syntax_lisianthus =
     vim.tbl_deep_extend("force", result.syntax_default, {
       keyword_return = p.stem,
       keyword_exception = p.hydrangea,
     })
 
-  ---@class FleurThemeSyntax
   result.syntax_lulumi = vim.tbl_deep_extend("force", result.syntax_default, {
     keyword_return = p.stem,
     keyword_exception = p.hydrangea,
   })
-
-  ---@class FleurThemePluginTelescope
-  result.plugin_telescope = {
-    fg_normal = p.gray8,
-    bg_normal = p.black,
-    fg_results = p.gray6,
-    bg_selection = p.gray3,
-    fg_preview = p.black,
-    bg_preview = p.gray9,
-    fg_counter = p.gray7,
-    fg_border = p.gray4,
-  }
-
-  ---@class FleurThemePluginWhichKey
-  result.plugin_which_key = {
-    bg = p.gray1,
-    key = p.lily,
-    group = p.gray5,
-    separator = p.gray6,
-    desc = p.gray7,
-  }
 
   result.syntax_tweak = {}
 

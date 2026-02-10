@@ -2,9 +2,8 @@ local hl = require "fleur.highlight.hl"
 
 ---@param theme FleurTheme
 ---@return FleurHighlight[]
-local syntax = function(_, _, theme)
+local syntax = function(theme)
   return {
-    -- syntax
     hl.fg("Identifier", theme.syntax_default.type),
     hl.fg("Function", theme.syntax_default.func_call),
     hl.fg("Type", theme.syntax_default.type),
@@ -18,7 +17,6 @@ local syntax = function(_, _, theme)
     hl.ln("Exception", "Keyword"),
     hl.ln("PreProc", "Keyword"),
 
-    -- constants
     hl.fg("Constant", theme.syntax_default.const),
     hl.fg("String", theme.syntax_default.string),
     hl.ln("Character", "String"),
@@ -26,13 +24,11 @@ local syntax = function(_, _, theme)
     hl.ln("Boolean", "Constant"),
     hl.ln("Float", "Constant"),
 
-    -- punctuation
     hl.fg("Quote", theme.syntax_default.string),
     hl.fg("Operator", theme.syntax_default.punctuation),
     hl.fg("Delimiter", theme.syntax_default.punctuation),
     hl.co("MatchParen", theme.ui.bg_search_cur, theme.ui.bg_search_item),
 
-    -- comment
     hl.fg("Todo", theme.log.hint),
     hl.fg("Question", theme.log.hint),
     hl.fg("Comment", theme.syntax_default.comment),
