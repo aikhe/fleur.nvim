@@ -61,7 +61,7 @@ return function(p)
     hint = p.gray6,
     error = p.rose,
     info = p.dahlia,
-    warn = p.tulip,
+    warn = p.lily,
     deprecated = p.tulip,
   }
 

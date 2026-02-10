@@ -3,7 +3,7 @@ local highlights = require "fleur.highlight"
 
 local M = {}
 
----@param opts? FleurConfig
+---@param opts? table | FleurConfig
 M.setup = function(opts)
   require("fleur.config").setup(opts)
 

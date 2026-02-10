@@ -17,6 +17,12 @@ local diagnostic = function(theme)
     hl.fg("DiagnosticSignError", theme.diagnostic.error),
     hl.fg("DiagnosticSignDeprecated", theme.diagnostic.deprecated),
 
+    hl.fg("DiagnosticFloatingOk", theme.diagnostic.ok),
+    hl.fg("DiagnosticFloatingInfo", theme.diagnostic.info),
+    hl.fg("DiagnosticFloatingHint", theme.diagnostic.hint),
+    hl.fg("DiagnosticFloatingWarn", theme.diagnostic.warn),
+    hl.fg("DiagnosticFloatingError", theme.diagnostic.error),
+
     hl.op("DiagnosticUnderlineWarn", {
       undercurl = theme.ui.use_undercurl,
       underline = not theme.ui.use_undercurl,
