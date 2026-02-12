@@ -68,7 +68,7 @@ local miscs = function(theme)
     hl.fg("@property.css", theme.ui.fg_normal),
     hl.fg("@tag.css", theme.ui.fg_normal),
 
-    hl.fg("markdownCodeDelimiter", p.stem),
+    hl.fg("markdownCodeDelimiter", p.bruyere),
     hl.fg("markdownLinkDelimiter", p.gray6),
     hl.ln("markdownLinkTextDelimiter", "@markup.link"),
     hl.ln("markdownLinkText", "@markup.link"),
@@ -89,12 +89,12 @@ local miscs = function(theme)
     hl.fg("TodoFgTODO", theme.p.gray9, { bold = true }),
     hl.op("TodoSignTODO", { bold = true }),
 
-    hl.bg("TodoBgNOTE", theme.p.dahlia),
-    hl.fg("TodoFgNOTE", theme.p.dahlia, { bold = true }),
+    hl.bg("TodoBgNOTE", theme.p.bleuet),
+    hl.fg("TodoFgNOTE", theme.p.bleuet, { bold = true }),
     hl.op("TodoSignNOTE", { bold = true }),
 
-    hl.bg("TodoBgWARN", theme.p.tulip),
-    hl.fg("TodoFgWARN", theme.p.tulip, { bold = true }),
+    hl.bg("TodoBgWARN", theme.p.zinnia),
+    hl.fg("TodoFgWARN", theme.p.zinnia, { bold = true }),
     hl.op("TodoSignWARN", { bold = true }),
   }
 end

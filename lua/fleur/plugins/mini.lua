@@ -7,14 +7,14 @@ return function(theme)
   return {
     plugin_name = "mini",
     highlight = {
-      hl.fg("MiniIconsBlue", p.hydrangea),
-      hl.fg("MiniIconsCyan", p.dahlia),
+      hl.fg("MiniIconsBlue", p.anemone),
+      hl.fg("MiniIconsCyan", p.bleuet),
       hl.fg("MiniIconsGray", p.gray5),
-      hl.fg("MiniIconsGreen", p.stem),
-      hl.fg("MiniIconsOrange", p.tulip),
-      hl.fg("MiniIconsRed", p.rose),
+      hl.fg("MiniIconsGreen", p.bruyere),
+      hl.fg("MiniIconsOrange", p.zinnia),
+      hl.fg("MiniIconsRed", p.coquelicot),
       hl.fg("MiniIconsWhite", p.gray8),
-      hl.fg("MiniIconsYellow", p.tulip),
+      hl.fg("MiniIconsYellow", p.zinnia),
     },
   }
 end

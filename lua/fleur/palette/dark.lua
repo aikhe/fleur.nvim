@@ -1,11 +1,11 @@
 ---@type FleurPalette
 return {
-  rose = "#FF8080",
-  tulip = "#FFBA9D",
-  stem = "#8ABE8A",
-  hydrangea = "#485571",
-  dahlia = "#6D89A7",
-  lily = "#C9D9D8",
+  coquelicot = "#FF8080",
+  zinnia = "#FFBA9D",
+  bruyere = "#8ABE8A",
+  anemone = "#485571",
+  bleuet = "#6D89A7",
+  lis = "#C9D9D8",
 
   lulumi = "#A8DFDC",
   maomi = "#323333",

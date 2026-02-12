@@ -1,10 +1,10 @@
 ---@class FleurPalette
----@field rose string
----@field tulip string
----@field hydrangea string
----@field dahlia string
----@field lily string
----@field stem string
+---@field coquelicot string
+---@field zinnia string
+---@field anemone string
+---@field bleuet string
+---@field lis string
+---@field bruyere string
 ---@field lulumi string
 ---@field maomi string
 ---@field black string

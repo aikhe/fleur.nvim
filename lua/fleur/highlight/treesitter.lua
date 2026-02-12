@@ -70,13 +70,13 @@ local treesitter = function(theme)
       theme.syntax_default.string_escape,
       { bold = true }
     ),
-    hl.fg("@markup.list.unchecked", theme.p.rose),
+    hl.fg("@markup.list.unchecked", theme.p.coquelicot),
 
     hl.fg("@markup.link", theme.p.gray6),
     hl.fg("@markup.link.label", theme.p.gray6),
     hl.fg("@markup.link.url", theme.p.gray4),
 
-    hl.fg("@markup.math", theme.p.tulip),
+    hl.fg("@markup.math", theme.p.zinnia),
 
     hl.fg("@tag", theme.syntax_default.tag),
     hl.fg("@tag.delimiter", theme.syntax_default.tag),

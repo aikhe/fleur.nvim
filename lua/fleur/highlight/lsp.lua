@@ -8,7 +8,7 @@ local lsp = function(theme)
     hl.bg("LspReferenceText", p.gray2),
     hl.bg("LspReferenceRead", p.gray2),
     hl.bg("LspReferenceWrite", p.gray2),
-    hl.fg("LspSignatureActiveParameter", p.lily, { bold = true }),
+    hl.fg("LspSignatureActiveParameter", p.lis, { bold = true }),
   }
 end
 

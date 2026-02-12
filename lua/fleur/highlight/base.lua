@@ -55,7 +55,7 @@ local base = function(theme)
 
     hl.fg("WinSeparator", theme.ui.bg_cursorline),
     hl.fg("EndOfBuffer", theme.ui.fg_end_of_buffer),
-    hl.fg("QuickFixLine", theme.p.stem),
+    hl.fg("QuickFixLine", theme.p.bruyere),
   }
 end
 

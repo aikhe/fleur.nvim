@@ -9,7 +9,7 @@ return function(p)
     fg_icon = p.gray4,
     fg_normal = p.gray8,
     bg_normal = p.black,
-    fg_title = p.lily,
+    fg_title = p.lis,
     fg_whitespace = p.gray3,
 
     fg_line_num = p.gray4,
@@ -19,7 +19,7 @@ return function(p)
 
     fg_search = p.black,
     bg_search_item = p.gray3,
-    bg_search_cur = p.dahlia,
+    bg_search_cur = p.bleuet,
 
     fg_visual = p.black,
     bg_visual = p.gray8,
@@ -48,57 +48,57 @@ return function(p)
   }
 
   result.log = {
-    error = p.rose,
-    info = p.lily,
-    warn = p.tulip,
-    success = p.stem,
+    error = p.coquelicot,
+    info = p.lis,
+    warn = p.zinnia,
+    success = p.bruyere,
     hint = p.gray6,
   }
 
   result.diagnostic = {
     text = p.gray4,
-    ok = p.stem,
+    ok = p.bruyere,
     hint = p.gray6,
-    error = p.rose,
-    info = p.dahlia,
-    warn = p.lily,
-    deprecated = p.tulip,
+    error = p.coquelicot,
+    info = p.bleuet,
+    warn = p.lis,
+    deprecated = p.zinnia,
   }
 
   result.fs = {
     dir = p.gray6,
     file = p.gray8,
-    exec = p.stem,
-    link = p.dahlia,
+    exec = p.bruyere,
+    link = p.bleuet,
     binary_data = p.gray6,
     socket = p.gray6,
   }
 
   result.diff = {
-    add = p.stem,
+    add = p.bruyere,
     change = p.gray6,
-    delete = p.rose,
-    info = p.dahlia,
+    delete = p.coquelicot,
+    info = p.bleuet,
   }
 
   result.syntax_default = {
     keyword = p.gray5,
-    keyword_return = p.stem,
-    keyword_exception = p.rose,
-    string = p.dahlia,
-    string_escape = p.hydrangea,
+    keyword_return = p.bruyere,
+    keyword_exception = p.coquelicot,
+    string = p.bleuet,
+    string_escape = p.anemone,
     comment = p.gray4,
     type = p.gray6,
     type_primitive = p.gray6,
-    builtin = p.dahlia,
-    func_def = p.lily,
+    builtin = p.bleuet,
+    func_def = p.lis,
     func_call = p.gray6,
     var = p.gray8,
     var_member = p.gray7,
     property = p.gray6,
     punctuation = p.gray5,
     const = p.gray6,
-    special = p.dahlia,
+    special = p.bleuet,
     type_def = p.gray7,
     const_builtin = p.gray5,
     tag = p.gray4,
@@ -107,13 +107,13 @@ return function(p)
 
   result.syntax_lisianthus =
     vim.tbl_deep_extend("force", result.syntax_default, {
-      keyword_return = p.stem,
-      keyword_exception = p.hydrangea,
+      keyword_return = p.bruyere,
+      keyword_exception = p.anemone,
     })
 
   result.syntax_lulumi = vim.tbl_deep_extend("force", result.syntax_default, {
-    keyword_return = p.stem,
-    keyword_exception = p.hydrangea,
+    keyword_return = p.bruyere,
+    keyword_exception = p.anemone,
   })
 
   result.syntax_tweak = {}
