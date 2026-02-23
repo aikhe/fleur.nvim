@@ -32,6 +32,7 @@ local syntax = function(theme)
     hl.fg("Todo", theme.log.hint),
     hl.fg("Question", theme.log.hint),
     hl.fg("Comment", theme.syntax_default.comment),
+    hl.fg("CommentFg", theme.syntax_default.comment),
     hl.fg("SpecialComment", theme.syntax_default.comment),
   }
 end

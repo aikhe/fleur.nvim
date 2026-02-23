@@ -85,8 +85,8 @@ local miscs = function(theme)
     hl.fg("DevIconDefault", theme.ui.fg_icon),
 
     -- todo-comments.nvim
-    hl.bg("TodoBgTODO", theme.p.gray9),
-    hl.fg("TodoFgTODO", theme.p.gray9, { bold = true }),
+    hl.bg("TodoBgTODO", theme.p.lis),
+    hl.fg("TodoFgTODO", theme.p.lis, { bold = true }),
     hl.op("TodoSignTODO", { bold = true }),
 
     hl.bg("TodoBgNOTE", theme.p.bleuet),

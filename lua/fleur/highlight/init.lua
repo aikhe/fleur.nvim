@@ -24,6 +24,7 @@ M.get = function(config, theme)
     require "fleur.plugins.oil"(theme),
     require "fleur.plugins.telescope"(theme),
     require "fleur.plugins.which-key"(theme),
+    require "fleur.plugins.volt"(theme),
   }
 end
 

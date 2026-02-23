@@ -17,6 +17,7 @@ M.defaults = {
     oil = true,
     telescope = true,
     which_key = true,
+    volt = true,
   },
   on_colors = function(_) end,
   on_highlights = function(_, _) end,

@@ -98,7 +98,7 @@ return function(p)
     property = p.gray6,
     punctuation = p.gray5,
     const = p.gray6,
-    special = p.bleuet,
+    special = p.lis,
     type_def = p.gray7,
     const_builtin = p.gray5,
     tag = p.gray4,
