@@ -22,6 +22,8 @@
 ---@field mode string
 ---@field transparent boolean
 ---@field terminal_colors boolean
+---@field auto boolean
+---@field cache boolean
 ---@field styles table<string, vim.api.keyset.highlight>
 ---@field plugins table<string, boolean>
 ---@field on_colors fun(palette: FleurPalette)
@@ -29,6 +31,10 @@
 
 ---@class FleurHighlight: vim.api.keyset.highlight
 ---@field name string
+
+---@class FleurCache
+---@field config table
+---@field highlights FleurHighlight[]
 
 ---@class FleurHighlightGroup
 ---@field plugin_name? string

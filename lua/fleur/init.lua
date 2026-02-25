@@ -1,9 +1,6 @@
-local config = require("fleur.config").options
 local highlights = require "fleur.highlight"
 
 local M = {}
-
----@param opts? table | FleurConfig
 M.setup = function(opts)
   require("fleur.config").setup(opts)
 
@@ -17,6 +14,11 @@ M.setup = function(opts)
   vim.api.nvim_create_user_command(
     "FleurReload",
     function() require("fleur.utils").reload() end,
+    {}
+  )
+  vim.api.nvim_create_user_command(
+    "FleurClearCache",
+    function() require("fleur.utils").cache.clear() end,
     {}
   )
 end
@@ -42,6 +44,8 @@ end
 M.load = function(opts)
   opts = opts or {}
 
+  local config = require("fleur.config").options
+
   if vim.tbl_isempty(config) then
     M.setup()
     config = require("fleur.config").options
@@ -66,19 +70,40 @@ M.load = function(opts)
   vim.g.colors_name = "fleur"
   vim.o.background = mode
 
-  local highlight_groups = highlights.get(config, theme)
+  local cache_key = mode
+  local cache_config = {
+    palette = p,
+    plugins = highlights.detect_plugins(config),
+    styles = config.styles,
+    transparent = config.transparent,
+  }
+
+  local cache = config.cache and require("fleur.utils").cache.read(cache_key)
+  local hl_map = {}
   local groups = {}
 
-  for _, group in ipairs(highlight_groups) do
-    if
-      group.dont_skip
-      or (group.plugin_name and config.plugins[group.plugin_name])
-    then
-      vim.list_extend(groups, group.highlight)
+  if cache and vim.deep_equal(cache_config, cache.config) then
+    groups = cache.highlights
+  else
+    local highlight_groups = highlights.get(config, theme)
+
+    for _, group in ipairs(highlight_groups) do
+      if
+        group.dont_skip
+        or (group.plugin_name and cache_config.plugins[group.plugin_name])
+      then
+        vim.list_extend(groups, group.highlight)
+      end
+    end
+
+    if config.cache then
+      require("fleur.utils").cache.write(
+        cache_key,
+        { config = cache_config, highlights = groups }
+      )
     end
   end
 
-  local hl_map = {}
   for _, hl in ipairs(groups) do
     hl_map[hl.name] = hl
   end
@@ -86,5 +111,4 @@ M.load = function(opts)
 
   apply_highlights(groups)
 end
-
 return M
