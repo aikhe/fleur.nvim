@@ -18,7 +18,7 @@ return function(p)
     bg_colorcolumn = p.gray1,
 
     fg_search = p.black,
-    bg_search_item = p.gray3,
+    bg_search_item = p.gray4,
     bg_search_cur = p.bleuet,
 
     fg_visual = p.black,

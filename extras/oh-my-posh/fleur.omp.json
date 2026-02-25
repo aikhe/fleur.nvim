@@ -1,0 +1,82 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "coquelicot": "#FF8080",
+    "zinnia": "#FFBA9D",
+    "bruyere": "#8ABE8A",
+    "anemone": "#485571",
+    "bleuet": "#6D89A7",
+    "lis": "#C9D9D8",
+
+    "lulumi": "#A8DFDC",
+    "maomi": "#323333",
+
+    "black": "#101010",
+    "gray1": "#141414",
+    "gray2": "#181818",
+    "gray3": "#2A2A2A",
+    "gray4": "#3D3D3D",
+    "gray5": "#525252",
+    "gray6": "#676767",
+    "gray7": "#939393",
+    "gray8": "#B7B7B7",
+    "gray9": "#EDEDED"
+  },
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "p:gray4",
+          "style": "diamond",
+          "template": "{{.Icon}} ",
+          "type": "os"
+        },
+        {
+          "foreground": "p:gray4",
+          "style": "diamond",
+          "template": "{{ .UserName }}@{{ .HostName }} ",
+          "type": "session"
+        },
+        {
+          "foreground": "p:gray6",
+          "style": "plain",
+          "options": {
+            "folder_icon": "..\ue5fe..",
+            "home_icon": "~",
+            "style": "agnoster_short"
+          },
+          "template": "{{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "foreground": "p:lis",
+          "style": "powerline",
+          "options": {
+            "branch_icon": "\ue725 ",
+            "cherry_pick_icon": "\ue29b ",
+            "commit_icon": "\uf417 ",
+            "fetch_status": false,
+            "fetch_upstream_icon": false,
+            "merge_icon": "\ue727 ",
+            "no_commits_icon": "\uf0c3 ",
+            "rebase_icon": "\ue728 ",
+            "revert_icon": "\uf0e2 ",
+            "tag_icon": "\uf412 "
+          },
+          "template": "{{ .HEAD }} ",
+          "type": "git"
+        },
+        {
+          "foreground": "p:gray5",
+          "style": "plain",
+          "template": "\uf105",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 4
+}
