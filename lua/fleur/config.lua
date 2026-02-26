@@ -1,5 +1,6 @@
 local M = {}
 
+---@type FleurConfig
 M.defaults = {
   mode = "dark",
   transparent = false,

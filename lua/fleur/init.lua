@@ -1,6 +1,7 @@
 local M = {}
 
 -- plugin name mapping for auto-detection
+---@type table<string, string>
 local plugin_maps = {
   ["gitsigns.nvim"] = "git_signs",
   ["mini.nvim"] = "mini",
@@ -41,7 +42,11 @@ local detect_plugins = function(config)
         if plugin.active and plugin_maps[plugin.spec.name] then
           plugins[plugin_maps[plugin.spec.name]] = true
         end
-        if not plugins.mini and plugin.active and plugin.spec.name:match "^mini%." then
+        if
+          not plugins.mini
+          and plugin.active
+          and plugin.spec.name:match "^mini%."
+        then
           plugins.mini = true
         end
       end
@@ -73,7 +78,7 @@ local apply_highlights = function(groups)
   end
 end
 
----@param opt table
+---@param opt FleurLoadOpts
 ---@param theme FleurTheme
 local load_variant = function(opt, theme)
   theme.syntax = theme.syntax_default
@@ -82,6 +87,7 @@ local load_variant = function(opt, theme)
   theme.syntax = vim.tbl_extend("force", theme.syntax, theme.syntax_tweak)
 end
 
+---@param opts? FleurConfig
 M.setup = function(opts)
   require("fleur.config").setup(opts)
 
@@ -104,6 +110,7 @@ M.setup = function(opts)
   )
 end
 
+---@param opts? FleurLoadOpts
 M.load = function(opts)
   opts = opts or {}
 

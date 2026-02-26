@@ -1,5 +1,6 @@
 local M = {}
 
+---@return nil
 function M.reload()
   local saved_opts = vim.deepcopy(require("fleur.config").options)
 
@@ -12,6 +13,7 @@ function M.reload()
   vim.cmd "colorscheme fleur"
 end
 
+---@class FleurCacheModule
 M.cache = {}
 
 ---@param key string
@@ -28,11 +30,8 @@ function M.cache.read(key)
   local data = file:read "*a"
   file:close()
 
-  local is_ok, ret = pcall(
-    vim.json.decode,
-    data,
-    { luanil = { object = true, array = true } }
-  )
+  local is_ok, ret =
+    pcall(vim.json.decode, data, { luanil = { object = true, array = true } })
   return is_ok and ret or nil
 end
 
@@ -46,6 +45,7 @@ function M.cache.write(key, data)
   file:close()
 end
 
+---@return nil
 function M.cache.clear()
   for _, style in ipairs { "dark", "light" } do
     vim.uv.fs_unlink(M.cache.file(style))
