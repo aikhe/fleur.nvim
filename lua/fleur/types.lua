@@ -19,16 +19,26 @@
 ---@field gray9 string
 
 ---@class FleurConfig
----@field mode string
----@field transparent boolean
----@field terminal_colors boolean
----@field styles table<string, vim.api.keyset.highlight>
----@field plugins table<string, boolean>
----@field on_colors fun(palette: FleurPalette)
----@field on_highlights fun(highlights: table, palette: FleurPalette)
+---@field mode? string
+---@field transparent? boolean
+---@field terminal_colors? boolean
+---@field auto? boolean
+---@field cache? boolean
+---@field styles? table<string, vim.api.keyset.highlight>
+---@field plugins? table<string, boolean>
+---@field on_colors? fun(palette: FleurPalette)
+---@field on_highlights? fun(highlights: table, palette: FleurPalette)
+
+---@class FleurLoadOpts
+---@field mode? string
+---@field theme? string
 
 ---@class FleurHighlight: vim.api.keyset.highlight
 ---@field name string
+
+---@class FleurCache
+---@field config table
+---@field highlights FleurHighlight[]
 
 ---@class FleurHighlightGroup
 ---@field plugin_name? string
@@ -58,16 +68,79 @@
 ---@field tag string
 ---@field func_param string
 
+---@class FleurThemeUI
+---@field use_undercurl boolean
+---@field fg_icon string
+---@field fg_normal string
+---@field bg_normal string
+---@field fg_title string
+---@field fg_whitespace string
+---@field fg_line_num string
+---@field fg_line_num_cur string
+---@field bg_cursorline string
+---@field bg_colorcolumn string
+---@field fg_search string
+---@field bg_search_item string
+---@field bg_search_cur string
+---@field fg_visual string
+---@field bg_visual string
+---@field fg_statusline string
+---@field bg_statusline string
+---@field fg_statusline_nc string
+---@field bg_statusline_nc string
+---@field fg_tab_nc string
+---@field bg_tab_nc string
+---@field fg_tab_active string
+---@field bg_tab_active string
+---@field fg_border string
+---@field bg_popup string
+---@field fg_menu string
+---@field bg_menu string
+---@field bg_pmenu_sel string
+---@field bg_scrollbar string
+---@field fg_scrollbar string
+---@field fg_end_of_buffer string
+
+---@class FleurThemeLog
+---@field error string
+---@field info string
+---@field warn string
+---@field success string
+---@field hint string
+
+---@class FleurThemeDiagnostic
+---@field text string
+---@field ok string
+---@field hint string
+---@field error string
+---@field info string
+---@field warn string
+---@field deprecated string
+
+---@class FleurThemeFS
+---@field dir string
+---@field file string
+---@field exec string
+---@field link string
+---@field binary_data string
+---@field socket string
+
+---@class FleurThemeDiff
+---@field add string
+---@field change string
+---@field delete string
+---@field info string
+
 ---@class FleurTheme
 ---@field p FleurPalette
 ---@field none string
----@field ui table
----@field log table
----@field diagnostic table
----@field fs table
----@field diff table
+---@field ui FleurThemeUI
+---@field log FleurThemeLog
+---@field diagnostic FleurThemeDiagnostic
+---@field fs FleurThemeFS
+---@field diff FleurThemeDiff
 ---@field syntax FleurThemeSyntax
 ---@field syntax_default FleurThemeSyntax
 ---@field syntax_lisianthus FleurThemeSyntax
 ---@field syntax_lulumi FleurThemeSyntax
----@field syntax_tweak table
+---@field syntax_tweak table<string, string>

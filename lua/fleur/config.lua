@@ -1,9 +1,12 @@
 local M = {}
 
+---@type FleurConfig
 M.defaults = {
   mode = "dark",
   transparent = false,
   terminal_colors = true,
+  auto = true,
+  cache = true,
   styles = {
     comments = { italic = true },
     keywords = {},
@@ -18,6 +21,7 @@ M.defaults = {
     telescope = true,
     which_key = true,
     volt = true,
+    nvim_tree = true,
   },
   on_colors = function(_) end,
   on_highlights = function(_, _) end,
