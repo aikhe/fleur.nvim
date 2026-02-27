@@ -22,6 +22,7 @@ M.defaults = {
     which_key = true,
     volt = true,
     nvim_tree = true,
+    nvim_web_devicons = true,
   },
   on_colors = function(_) end,
   on_highlights = function(_, _) end,

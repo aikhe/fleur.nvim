@@ -185,5 +185,95 @@ return function(theme)
         spec.fg("ExYellow", p.zinnia),
       },
     },
+
+    -- nvim-web-devicons
+    {
+      plugin_name = "nvim_web_devicons",
+      highlight = {
+        spec.fg("DevIconLua", p.bleuet),
+        spec.fg("DevIconMd", p.gray8),
+        spec.fg("DevIconGit", p.coquelicot),
+        spec.fg("DevIconHtml", p.zinnia),
+        spec.fg("DevIconCss", p.bleuet),
+        spec.fg("DevIconJs", p.zinnia),
+        spec.fg("DevIconTs", p.bleuet),
+        spec.fg("DevIconPy", p.bruyere),
+        spec.fg("DevIconC", p.bleuet),
+        spec.fg("DevIconCpp", p.bleuet),
+        spec.fg("DevIconRs", p.coquelicot),
+        spec.fg("DevIconGo", p.bleuet),
+        spec.fg("DevIconJson", p.zinnia),
+        spec.fg("DevIconYaml", p.coquelicot),
+        spec.fg("DevIconToml", p.gray8),
+        spec.fg("DevIconSh", p.bruyere),
+        spec.fg("DevIconVim", p.bruyere),
+        spec.fg("DevIconZsh", p.bruyere),
+
+        -- languages
+        spec.fg("DevIconDocker", p.bleuet),
+        spec.fg("DevIconJava", p.coquelicot),
+        spec.fg("DevIconKotlin", p.anemone),
+        spec.fg("DevIconPhp", p.anemone),
+        spec.fg("DevIconRuby", p.coquelicot),
+        spec.fg("DevIconSwift", p.coquelicot),
+        spec.fg("DevIconSql", p.gray8),
+        spec.fg("DevIconNix", p.bleuet),
+        spec.fg("DevIconDart", p.bleuet),
+        spec.fg("DevIconElixir", p.bleuet),
+        spec.fg("DevIconHaskell", p.coquelicot),
+        spec.fg("DevIconScala", p.anemone),
+        spec.fg("DevIconPerl", p.bleuet),
+        spec.fg("DevIconR", p.bleuet),
+        spec.fg("DevIconClojure", p.bruyere),
+
+        -- web & frameworks
+        spec.fg("DevIconVue", p.bruyere),
+        spec.fg("DevIconReact", p.bleuet),
+        spec.fg("DevIconJsx", p.bleuet),
+        spec.fg("DevIconTsx", p.bleuet),
+        spec.fg("DevIconSass", p.anemone),
+        spec.fg("DevIconScss", p.anemone),
+        spec.fg("DevIconLess", p.bleuet),
+        spec.fg("DevIconTailwind", p.bleuet),
+
+        -- build & tools
+        spec.fg("DevIconMakefile", p.gray8),
+        spec.fg("DevIconLock", p.gray8),
+        spec.fg("DevIconCmake", p.bleuet),
+        spec.fg("DevIconBabel", p.zinnia),
+        spec.fg("DevIconWebpack", p.bleuet),
+        spec.fg("DevIconGrunt", p.coquelicot),
+        spec.fg("DevIconGulp", p.coquelicot),
+        spec.fg("DevIconNpm", p.coquelicot),
+        spec.fg("DevIconYarn", p.bleuet),
+        spec.fg("DevIconPackageJson", p.coquelicot),
+        spec.fg("DevIconCargo", p.coquelicot),
+
+        -- data & formats
+        spec.fg("DevIconXml", p.zinnia),
+        spec.fg("DevIconCsv", p.bruyere),
+        spec.fg("DevIconTsv", p.bruyere),
+        spec.fg("DevIconBin", p.gray5),
+        spec.fg("DevIconLog", p.gray8),
+        spec.fg("DevIconPdf", p.coquelicot),
+        spec.fg("DevIconTxt", p.gray8),
+
+        -- media
+        spec.fg("DevIconImage", p.anemone),
+        spec.fg("DevIconVideo", p.anemone),
+        spec.fg("DevIconAudio", p.anemone),
+        spec.fg("DevIconFont", p.bleuet),
+
+        -- system & env
+        spec.fg("DevIconWindows", p.bleuet),
+        spec.fg("DevIconApple", p.gray8),
+        spec.fg("DevIconLinux", p.gray8),
+        spec.fg("DevIconEnv", p.zinnia),
+        spec.fg("DevIconLicense", p.zinnia),
+        spec.fg("DevIconGitAttributes", p.coquelicot),
+        spec.fg("DevIconGitIgnore", p.coquelicot),
+        spec.fg("DevIconGitConfig", p.coquelicot),
+      },
+    },
   }
 end

@@ -47,7 +47,11 @@ return function(theme)
 
     -- statusline
     spec.co("StatusLine", theme.ui.fg_statusline, theme.ui.bg_statusline),
-    spec.co("StatusLineNC", theme.ui.fg_statusline_nc, theme.ui.bg_statusline_nc),
+    spec.co(
+      "StatusLineNC",
+      theme.ui.fg_statusline_nc,
+      theme.ui.bg_statusline_nc
+    ),
 
     -- tabline
     spec.co("Tabline", theme.ui.fg_tab_nc, theme.ui.bg_tab_nc),
@@ -188,9 +192,21 @@ return function(theme)
     -- treesitter string
     spec.fg("@string", theme.syntax_default.string),
     spec.fg("@character", theme.syntax_default.string),
-    spec.fg("@string.escape", theme.syntax_default.string_escape, { bold = true }),
-    spec.fg("@string.special", theme.syntax_default.string_escape, { bold = true }),
-    spec.fg("@string.regexp", theme.syntax_default.string_escape, { bold = true }),
+    spec.fg(
+      "@string.escape",
+      theme.syntax_default.string_escape,
+      { bold = true }
+    ),
+    spec.fg(
+      "@string.special",
+      theme.syntax_default.string_escape,
+      { bold = true }
+    ),
+    spec.fg(
+      "@string.regexp",
+      theme.syntax_default.string_escape,
+      { bold = true }
+    ),
 
     -- treesitter comment
     spec.fg("@comment", theme.syntax_default.comment),
@@ -209,7 +225,11 @@ return function(theme)
     spec.op("@markup.underline", { underline = true }),
 
     spec.fg("@markup.list", p.gray4),
-    spec.fg("@markup.list.checked", theme.syntax_default.string_escape, { bold = true }),
+    spec.fg(
+      "@markup.list.checked",
+      theme.syntax_default.string_escape,
+      { bold = true }
+    ),
     spec.fg("@markup.list.unchecked", p.coquelicot),
 
     spec.fg("@markup.link", p.gray6),

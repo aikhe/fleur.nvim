@@ -11,6 +11,7 @@ local plugin_maps = {
   ["which-key.nvim"] = "which_key",
   ["volt"] = "volt",
   ["nvim-tree.lua"] = "nvim_tree",
+  ["nvim-web-devicons"] = "nvim_web_devicons",
 }
 
 ---@param config FleurConfig
